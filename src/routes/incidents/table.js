@@ -1,24 +1,18 @@
 import React from 'react';
 import MaterialTable from "material-table";
 
-export const Table = () => {
-
-    const data=[
-        {title: 'Incidencia 1', description:'Descripcion 1', location:'Ubicacion 1', attachments:'N/A'},
-        {title: 'Incidencia 2', description:'Descripcion 2', location:'Ubicacion 2', attachments:'N/A'},
-        {title: 'Incidencia 3', description:'Descripcion 3', location:'Ubicacion 3', attachments:'N/A'},
-    ]
+export const Table = (data) => {
 
     const columns = [
+        {
+            title:'ID', field: 'id'
+        },
         {
             title:'Titulo', field: 'title'
         },
         {
             title:'Descripcion', field: 'description'
-        },
-        {
-            title:'Adjuntos', field: 'attachments'
-        },
+        }
     ]
 
     return (<div>
