@@ -20,14 +20,21 @@ export const Table = (data) => {
                        data={data}
                        columns={columns}
                        options={{
-                           selection:true
+                           selection:true,
                        }}
                        actions={[
                            {
                                icon: 'delete',
-                               tooltip: 'Borrar Incidencia'
+                               tooltip: 'Borrar Incidencia',
+                               onClick: (event, rowData) =>
+                                   window.confirm('Queres borrar ' + rowData.name)
                            }
                        ]}
+                       editable={{
+                           onRowDelete: oldData => {
+
+                           }
+                       }}
         />
     </div>)
 }
