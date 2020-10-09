@@ -6,7 +6,7 @@ import {Table} from './incidents/Table';
 function Incidents() {
     const [data, setData] = React.useState([]);
     const url = 'https://contame.herokuapp.com/contame/report';
-    useEffect(()=>{
+    useEffect(() => {
         axios.get(url).then((response) => {setData(response.data)});
     }, []);
     return (
