@@ -1,13 +1,12 @@
 import React, {useEffect} from "react";
-import axios from 'axios';
 import {Table} from './incidents/Table';
+import {getIncidents} from '../services/reports'
 
 
 function Incidents() {
     const [data, setData] = React.useState([]);
     useEffect(() => {
-        axios.get(process.env.REACT_APP_BACKEND_URL).then((response) =>
-        {setData(response.data)});
+       getIncidents(setData);
     }, []);
     return (
         <Table data={data} />
