@@ -6,7 +6,7 @@ import {getIncidents} from '../services/reports'
 function Incidents() {
     const [data, setData] = React.useState([]);
     useEffect(() => {
-       getIncidents(setData);
+       getIncidents().then((response) => {setData(response.data)});
     }, []);
     return (
         <Table data={data} />
