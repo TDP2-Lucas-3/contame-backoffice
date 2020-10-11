@@ -13,6 +13,16 @@ const Table = (props) => {
         {
             title: 'Descripcion', field: 'description',
         },
+        {
+            title: 'Ubicacion', field: 'location'
+        },
+        {
+            title: 'Imagen', field: 'image',
+            render: row =>
+                <a href={row.image} target="_blank" rel="noopener noreferrer">
+                    {!!(row.image)?"Adjunto":"N/A"}
+                </a>
+        }
     ];
 
     return (<div>
