@@ -5,9 +5,6 @@ const Table = (props) => {
 
     const columns = [
         {
-            title: 'ID', field: 'id',
-        },
-        {
             title: 'Titulo', field: 'title',
         },
         {
