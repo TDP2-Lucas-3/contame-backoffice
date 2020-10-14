@@ -38,29 +38,6 @@ const Table = (props) => {
                 cellStyle: {
                     fontSize: '12pt',
                 },
-                actionsColumnIndex: -1
-            }}
-            actions={[
-                {
-                    icon: 'edit',
-                    tooltip: 'Editar',
-                    onClick: (event, rowData) => {
-                        // Do save operation
-                    }
-                },
-                {
-                    icon: 'delete',
-                    tooltip: 'Eliminar incidencia',
-                    iconProps: { style: {color: 'red'}},
-                    onClick: (event, rowData) => {
-                        // Do save operation
-                    }
-                }
-            ]}
-            localization={{
-                header: {
-                    actions: 'Acciones'
-                }
             }}
         />
     </div>);
