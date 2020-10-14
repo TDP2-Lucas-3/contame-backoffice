@@ -2,7 +2,7 @@ import React from 'react';
 import MaterialTable from "material-table";
 import Button from "@material-ui/core/Button";
 
-const foo = (row) => {
+const render = (row) => {
     return (
         <div>
 
@@ -50,7 +50,7 @@ const Table = (props) => {
         {
             title: 'Imagenes', field: 'images',
             render: row =>
-                foo(row)
+                render(row)
         }
     ];
 
