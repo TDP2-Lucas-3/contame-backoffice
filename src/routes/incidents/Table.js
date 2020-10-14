@@ -11,7 +11,7 @@ const foo = (row) => {
                 row.images.map((image, index) => {
                     return (
                         <a href={image} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-                            {++index}
+                            {`${++index} `}
                         </a>
                     )
                 }):"N/A"
@@ -72,21 +72,8 @@ const Table = (props) => {
         pagination: {
             labelDisplayedRows: '{from}-{to} de {count}',
             labelRowsSelect: 'filas'
-        },
-        header: {
-            actions: 'Acciones'
         }
     }
-
-    const actions = [
-        {
-            icon: 'edit',
-            tooltip: 'Editar',
-            onClick: (event, rowData) => {
-                // Do save operation
-            }
-        },
-    ]
 
     const components = {
         Action: props => (
@@ -109,7 +96,6 @@ const Table = (props) => {
             columns={columns}
             options={options}
             localization={localization}
-            actions={actions}
             components={components}
         />
     </div>);
