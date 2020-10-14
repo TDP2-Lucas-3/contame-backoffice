@@ -5,21 +5,17 @@ import Button from "@material-ui/core/Button";
 const foo = (row) => {
     return (
         <div>
-            <a href={row.images[0]} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-                {!!(row.images[0])?"1    ":"N/A"}
-            </a>
-            <a href={row.images[1]} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-                {!!(row.images[1])?"2    ":""}
-            </a>
-            <a href={row.images[2]} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-                {!!(row.images[2])?"3    ":""}
-            </a>
-            <a href={row.images[3]} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-                {!!(row.images[3])?"4    ":""}
-            </a>
-            <a href={row.images[4]} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-                {!!(row.images[4])?"5    ":""}
-            </a>
+
+            {
+                row.images.length > 0?
+                row.images.map((image, index) => {
+                    return (
+                        <a href={image} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                            {++index}
+                        </a>
+                    )
+                }):"N/A"
+            }
          </div>
         )
 }
