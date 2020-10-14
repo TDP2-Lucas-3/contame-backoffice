@@ -39,6 +39,16 @@ const Table = (props) => {
                     fontSize: '12pt',
                 },
             }}
+            localization={{
+                toolbar: {
+                    searchPlaceholder: "Buscar"
+                },
+                pagination: {
+                    labelDisplayedRows: '{from}-{to} de {count}',
+                    labelRowsSelect: 'filas'
+                },
+            }}
+
         />
     </div>);
 }
