@@ -10,7 +10,6 @@ const renderImagesCollection = (row) => {
                     return (
                         <a href={image} target="_blank" rel="noopener noreferrer"
                            style={{textDecoration:'none'}}>
-
                             {`${++index} `}
                         </a>
                     )
