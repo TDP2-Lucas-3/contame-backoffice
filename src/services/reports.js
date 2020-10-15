@@ -1,12 +1,10 @@
-import axios from "axios";
+import axios from 'axios';
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const getIncidents = async () => {
-    const response = await axios.get(process.env.REACT_APP_BACKEND_URL);
-    return response;
-}
+  const url = `${BACKEND_URL}incident/`;
+  return await axios.get(url);
+};
 
-
-export {
-    getIncidents
-}
+export {getIncidents};
