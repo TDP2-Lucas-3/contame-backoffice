@@ -10,7 +10,9 @@ const render = (row) => {
                 row.images.length > 0?
                 row.images.map((image, index) => {
                     return (
-                        <a href={image} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                        <a href={image} target="_blank" rel="noopener noreferrer"
+                           style={{ textDecoration: 'none' }}>
+
                             {`${++index} `}
                         </a>
                     )
@@ -39,13 +41,16 @@ const Table = (props) => {
             title: 'Longitud', field: 'lon'
         },
         {
-            title: 'Fecha de reporte', field: 'creationDate', type:'date'
+            title: 'Fecha de reporte', field: 'creationDate', type:'date',
+            align: 'center'
         },
         {
-            title: 'Fecha ultima actualizacion', field: 'updateDate', type:'date'
+            title: 'Fecha ultima actualizacion', field: 'updateDate',
+            type:'date'
         },
         {
-            title: 'Fecha de cierre', field: 'completeDate', type:'date', emptyValue: '-'
+            title: 'Fecha de cierre', field: 'completeDate',
+            type:'date', emptyValue: '-', align: 'center'
         },
         {
             title: 'Imagenes', field: 'images',
