@@ -79,21 +79,7 @@ const Table = (props) => {
             labelRowsSelect: 'filas'
         }
     }
-
-    const components = {
-        Action: props => (
-            <Button
-                onClick={event => props.action.onClick(event, props.data)}
-                color="primary"
-                style={{ textTransform: "none" }}
-                size="small"
-            >
-                Ver detalle
-            </Button>
-        )
-    }
-
-
+    
     return (<div>
         <MaterialTable
             title="Incidencias"
