@@ -86,7 +86,6 @@ const Table = (props) => {
             columns={columns}
             options={options}
             localization={localization}
-            components={components}
         />
     </div>);
 }
