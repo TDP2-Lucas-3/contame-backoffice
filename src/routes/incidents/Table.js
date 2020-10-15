@@ -17,7 +17,7 @@ const renderImagesCollection = (row) => {
                 }) : "N/A"
             }
          </div>
-            )
+    )
 }
 
 const Table = (props) => {
