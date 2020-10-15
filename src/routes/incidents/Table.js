@@ -5,19 +5,19 @@ const renderImagesCollection = (row) => {
     return (
         <div>
             {
-                row.images.length > 0?
+                row.images.length > 0 ?
                 row.images.map((image, index) => {
                     return (
                         <a href={image} target="_blank" rel="noopener noreferrer"
-                           style={{textDecoration: 'none'}}>
+                           style={{textDecoration:'none'}}>
 
                             {`${++index} `}
                         </a>
                     )
-                }): "N/A"
+                }) : "N/A"
             }
          </div>
-        )
+            )
 }
 
 const Table = (props) => {
