@@ -2,7 +2,7 @@ import React from 'react';
 import MaterialTable from "material-table";
 import Button from "@material-ui/core/Button";
 
-const render = (row) => {
+const renderImagesCollection = (row) => {
     return (
         <div>
 
@@ -55,7 +55,7 @@ const Table = (props) => {
         {
             title: 'Imagenes', field: 'images',
             render: row =>
-                render(row)
+                renderImagesCollection(row)
         }
     ];
 
@@ -79,7 +79,7 @@ const Table = (props) => {
             labelRowsSelect: 'filas'
         }
     }
-    
+
     return (<div>
         <MaterialTable
             title="Incidencias"
