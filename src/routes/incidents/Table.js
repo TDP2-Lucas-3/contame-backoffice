@@ -1,6 +1,5 @@
 import React from 'react';
 import MaterialTable from "material-table";
-import Button from "@material-ui/core/Button";
 
 const renderImagesCollection = (row) => {
     return (
