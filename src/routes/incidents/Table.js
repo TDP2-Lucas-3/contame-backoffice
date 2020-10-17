@@ -39,10 +39,12 @@ const Table = (props) => {
     {
       title: 'Latitud',
       field: 'lat',
+      render: (row) => Number.parseFloat(row.lat).toFixed(4),
     },
     {
       title: 'Longitud',
       field: 'lon',
+      render: (row) => Number.parseFloat(row.lon).toFixed(4),
     },
     {
       title: 'Fecha de reporte',
