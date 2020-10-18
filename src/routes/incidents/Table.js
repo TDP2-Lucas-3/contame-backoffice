@@ -35,16 +35,19 @@ const Table = (props) => {
     {
       title: 'Descripcion',
       field: 'description',
+      emptyValue: 'N/A',
     },
     {
       title: 'Latitud',
       field: 'lat',
-      render: (row) => Number.parseFloat(row.lat).toFixed(4),
+      render: (row) =>
+        row.lat !== 0.0 ? Number.parseFloat(row.lat).toFixed(4) : 'N/A',
     },
     {
       title: 'Longitud',
       field: 'lon',
-      render: (row) => Number.parseFloat(row.lon).toFixed(4),
+      render: (row) =>
+        row.lon !== 0.0 ? Number.parseFloat(row.lon).toFixed(4) : 'N/A',
     },
     {
       title: 'Fecha de reporte',
@@ -61,7 +64,7 @@ const Table = (props) => {
       title: 'Fecha de cierre',
       field: 'completeDate',
       type: 'date',
-      emptyValue: '-',
+      emptyValue: 'N/A',
       align: 'center',
     },
     {
