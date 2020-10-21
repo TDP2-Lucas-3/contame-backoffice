@@ -7,4 +7,9 @@ const getIncidents = async () => {
   return await axios.get(url);
 };
 
-export {getIncidents};
+const getUsers = async () => {
+  const url = `${BACKEND_URL}user/`;
+  return await axios.get(url);
+};
+
+export {getIncidents, getUsers};
