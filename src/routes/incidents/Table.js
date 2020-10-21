@@ -1,5 +1,6 @@
 import React from 'react';
 import MaterialTable from 'material-table';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const renderImagesCollection = (row) => {
   return (
@@ -97,13 +98,23 @@ const Table = (props) => {
 
   return (
     <div>
-      <MaterialTable
-        title="Incidencias"
-        data={props.data}
-        columns={columns}
-        options={options}
-        localization={localization}
-      />
+      {!props.data ? (
+        <CircularProgress
+          style={{
+            position: 'fixed',
+            left: '48%',
+            top: '45%',
+          }}
+        />
+      ) : (
+        <MaterialTable
+          title="Incidencias"
+          data={props.data}
+          columns={columns}
+          options={options}
+          localization={localization}
+        />
+      )}
     </div>
   );
 };
