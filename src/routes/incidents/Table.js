@@ -1,6 +1,15 @@
 import React from 'react';
 import MaterialTable from 'material-table';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import {makeStyles} from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+  centered: {
+    position: 'fixed',
+    left: '48%',
+    top: '45%',
+  },
+});
 
 const renderImagesCollection = (row) => {
   return (
@@ -95,17 +104,12 @@ const Table = (props) => {
       labelRowsSelect: 'filas',
     },
   };
+  const classes = useStyles();
 
   return (
     <div>
       {!props.data ? (
-        <CircularProgress
-          style={{
-            position: 'fixed',
-            left: '48%',
-            top: '45%',
-          }}
-        />
+        <CircularProgress className={classes.centered} />
       ) : (
         <MaterialTable
           title="Incidencias"
