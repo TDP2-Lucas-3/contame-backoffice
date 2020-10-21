@@ -54,11 +54,13 @@ const Table = (props) => {
       field: 'creationDate',
       type: 'date',
       align: 'center',
+      dateSetting: {locale: 'es-ES'},
     },
     {
       title: 'Fecha ultima actualizacion',
       field: 'updateDate',
       type: 'date',
+      dateSetting: {locale: 'es-ES'},
     },
     {
       title: 'Fecha de cierre',
@@ -66,6 +68,7 @@ const Table = (props) => {
       type: 'date',
       emptyValue: 'N/A',
       align: 'center',
+      dateSetting: {locale: 'es-ES'},
     },
     {
       title: 'Imagenes',
