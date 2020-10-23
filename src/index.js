@@ -7,7 +7,15 @@ import {Provider} from 'react-redux';
 import {Router} from 'react-router-dom';
 import {ContameRouter} from './routing/ContameRouter';
 import {createBrowserHistory} from 'history';
+import {signIn} from './services/authentication';
 const store = createStore(() => {});
+
+let authToken;
+async function getToken() {
+  authToken = await signIn();
+}
+getToken();
+export {authToken};
 
 ReactDOM.render(
   <React.StrictMode>
