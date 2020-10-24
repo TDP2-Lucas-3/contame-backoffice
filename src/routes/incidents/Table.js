@@ -103,6 +103,9 @@ const Table = (props) => {
       labelDisplayedRows: '{from}-{to} de {count}',
       labelRowsSelect: 'filas',
     },
+    body: {
+      emptyDataSourceMessage: 'No se han registrado incidencias todavia',
+    },
   };
   const classes = useStyles();
 
