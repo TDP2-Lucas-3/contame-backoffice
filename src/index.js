@@ -10,12 +10,9 @@ import {createBrowserHistory} from 'history';
 import {signIn} from './services/authentication';
 const store = createStore(() => {});
 
-let authToken;
-async function getToken() {
-  authToken = await signIn();
-}
-getToken();
-export {authToken};
+export const loginInfo = (async () => {
+  return await signIn();
+})();
 
 ReactDOM.render(
   <React.StrictMode>

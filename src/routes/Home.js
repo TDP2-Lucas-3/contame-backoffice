@@ -2,10 +2,9 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import {withRouter} from 'react-router-dom';
-import {authToken} from '../index';
+import {loginInfo} from '../index';
 
 export const Home = withRouter((props) => {
-  console.log(authToken);
   return (
     <Container>
       <h1>¡Contame! Backoffice</h1>
