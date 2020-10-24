@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import {createStore} from 'redux';
@@ -10,8 +10,9 @@ import {createBrowserHistory} from 'history';
 import {signIn} from './services/authentication';
 const store = createStore(() => {});
 
-export const loginInfo = (async () => {
-  return await signIn();
+export const token = (async () => {
+  const loginInfo = await signIn();
+  return loginInfo.data.token;
 })();
 
 ReactDOM.render(
