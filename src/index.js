@@ -8,6 +8,7 @@ import {Router} from 'react-router-dom';
 import {ContameRouter} from './routing/ContameRouter';
 import {createBrowserHistory} from 'history';
 import {signIn} from './services/authentication';
+import {Sidebar} from "./components/Sidebar";
 const store = createStore(() => {});
 
 export let token = null;
