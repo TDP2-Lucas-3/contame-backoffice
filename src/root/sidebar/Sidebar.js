@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {SidebarData} from './SidebarData';
+import {SidebarData} from './sidebarData';
 import './Sidebar.css';
 import {IconContext} from 'react-icons';
 
