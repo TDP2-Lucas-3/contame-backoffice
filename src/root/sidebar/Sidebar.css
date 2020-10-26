@@ -19,14 +19,15 @@
     display: flex;
     justify-content: center;
     position: fixed;
-    top: 0;
     left: -100%;
+    top: 0;
     transition: 850ms;
 }
 
 .nav-menu.active {
     left: 0;
     transition: 350ms;
+    position: fixed;
 }
 
 .nav-text {
@@ -50,7 +51,7 @@
 }
 
 .nav-text a:hover {
-    background-color: #039be5;
+    background-color: #64b5f6;
 }
 
 .nav-menu-items {
