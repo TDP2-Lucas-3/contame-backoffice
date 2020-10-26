@@ -1,23 +1,11 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  withRouter,
-} from 'react-router-dom';
-import {Sidebar} from '../components/Sidebar';
+import {withRouter} from 'react-router-dom';
 
 export const Home = withRouter((props) => {
   return (
     <Container>
-      <Router>
-        <Sidebar />
-        <Switch>
-          <Route path="/" />
-        </Switch>
-      </Router>
       <h1>¡Contame! Backoffice</h1>
       <div>
         <Button
