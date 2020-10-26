@@ -2,12 +2,18 @@ import React from 'react';
 import MaterialTable from 'material-table';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import {makeStyles} from '@material-ui/core/styles';
+import {Container} from '@material-ui/core';
 
 const useStyles = makeStyles({
   centered: {
     position: 'fixed',
     left: '48%',
     top: '45%',
+  },
+  table: {
+    position: 'relative',
+    left: '224px',
+    top: '0px',
   },
 });
 
@@ -117,13 +123,15 @@ const Table = (props) => {
       {!props.data ? (
         <CircularProgress className={classes.centered} />
       ) : (
-        <MaterialTable
-          title="Incidencias"
-          data={props.data}
-          columns={columns}
-          options={options}
-          localization={localization}
-        />
+        <Container className={classes.table}>
+          <MaterialTable
+            title="Incidencias"
+            data={props.data}
+            columns={columns}
+            options={options}
+            localization={localization}
+          />
+        </Container>
       )}
     </div>
   );
