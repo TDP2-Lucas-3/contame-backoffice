@@ -7,7 +7,7 @@ import {Container} from '@material-ui/core';
 const useStyles = makeStyles({
   centered: {
     position: 'fixed',
-    left: '48%',
+    left: '55%',
     top: '45%',
   },
   table: {
@@ -95,7 +95,6 @@ const Table = (props) => {
 
   const options = {
     selection: false,
-    showTitle: false,
     headerStyle: {
       backgroundColor: '#039be5',
       color: '#FFF',
@@ -125,7 +124,7 @@ const Table = (props) => {
       ) : (
         <Container className={classes.table}>
           <MaterialTable
-            title="Incidencias"
+            title="Incidencias registradas"
             data={props.data}
             columns={columns}
             options={options}
