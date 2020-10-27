@@ -6,7 +6,9 @@ export const Header = () => {
   return (
     <>
       <div className="header">
-        <Link to="/" className="text">¡Contame!</Link>
+        <Link to="/" className="text">
+          ¡Contame!
+        </Link>
       </div>
     </>
   );
