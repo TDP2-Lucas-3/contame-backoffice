@@ -12,7 +12,7 @@ const useStyles = makeStyles({
   },
   table: {
     position: 'relative',
-    left: '114px',
+    left: '117px',
     top: '90px',
     width: 1120,
   },
