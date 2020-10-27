@@ -4,12 +4,10 @@ import './Header.css';
 
 export const Header = () => {
   return (
-    <>
-      <div className="header">
-        <Link to="/" className="text">
-          ¡Contame!
-        </Link>
-      </div>
-    </>
+    <div className="header">
+      <Link to="/" className="text">
+        ¡Contame!
+      </Link>
+    </div>
   );
 };
