@@ -67,7 +67,7 @@ const Table = (props) => {
         row.lon !== 0.0 ? Number.parseFloat(row.lon).toFixed(4) : 'N/A',
     },
     {
-      title: 'Fecha de reporte',
+      title: 'Fecha reporte',
       field: 'creationDate',
       type: 'date',
       align: 'center',
@@ -80,7 +80,7 @@ const Table = (props) => {
       dateSetting: {locale: 'es-ES'},
     },
     {
-      title: 'Fecha de cierre',
+      title: 'Fecha cierre',
       field: 'completeDate',
       type: 'date',
       emptyValue: 'N/A',
