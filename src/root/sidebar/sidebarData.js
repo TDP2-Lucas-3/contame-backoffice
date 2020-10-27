@@ -3,7 +3,6 @@ import * as AiIcons from 'react-icons/ai';
 import * as MdIcons from 'react-icons/md';
 import * as FiIcons from 'react-icons/fi';
 
-
 export const SidebarData = [
   {
     title: 'Inicio',
