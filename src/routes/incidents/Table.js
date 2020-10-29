@@ -9,6 +9,7 @@ const useStyles = makeStyles({
     position: 'fixed',
     left: '55%',
     top: '45%',
+    color: '#1F271B',
   },
   table: {
     position: 'relative',
@@ -97,9 +98,10 @@ const Table = (props) => {
   const options = {
     selection: false,
     headerStyle: {
-      backgroundColor: '#039be5',
-      color: '#FFF',
+      backgroundColor: '#F4D35E',
+      color: '#1F271B',
       fontSize: '11pt',
+      fontWeight: 'bold',
     },
     cellStyle: {
       fontSize: '9pt',

@@ -6,7 +6,9 @@ export const Header = () => {
   return (
     <div className="header">
       <Link to="/" className="text">
-        ¡Contame!
+        <span className="text">
+          Conta<div className="yellowText">ME</div>
+        </span>
       </Link>
     </div>
   );

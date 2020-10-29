@@ -6,7 +6,7 @@ import {IconContext} from 'react-icons';
 
 export const Sidebar = () => {
   return (
-    <IconContext.Provider value={{color: '#fff'}}>
+    <IconContext.Provider value={{color: '#1F271B'}}>
       <nav className="nav-menu">
         <ul className="nav-menu-items">
           {SidebarData.map((item, index) => {
