@@ -8,8 +8,8 @@ import {Header} from '../root/header/Header';
 function ContameRouter() {
   return (
     <BrowserRouter>
-      <Header />
       <Sidebar />
+      <Header />
       <Switch>
         <Route path={'/incidents'}>
           <Incidents />
