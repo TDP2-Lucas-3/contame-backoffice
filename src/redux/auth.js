@@ -1,3 +1,6 @@
+import {HttpClient} from '../services/ContameHttpClient';
+import {Resources} from '../services/Resources';
+
 export const loginStatus = {
   LOGGED: 0,
   NOT_LOGGED: 1,
@@ -5,8 +8,7 @@ export const loginStatus = {
 
 const initialAuth = {
   status: loginStatus.NOT_LOGGED,
-  user: null,
-  token: null,
+  resources: null,
 };
 
 const LOG_IN = 'LOG_IN';
@@ -17,7 +19,7 @@ const exampleUser = {name: 'Test User'};
 export function auth(initial = initialAuth, action) {
   switch (action.type) {
     case LOG_IN: {
-      return {status: loginStatus.LOGGED, token: action.token};
+      return {status: loginStatus.LOGGED, resources: action.resources};
     }
     case LOG_OUT: {
       return initialAuth;
@@ -30,7 +32,7 @@ export function auth(initial = initialAuth, action) {
 export function login(token) {
   return {
     type: LOG_IN,
-    token,
+    resources: new Resources(new HttpClient(token)),
   };
 }
 
