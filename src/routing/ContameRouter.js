@@ -5,6 +5,7 @@ import {Users} from '../routes/Users';
 import React from 'react';
 import {Sidebar} from '../root/sidebar/Sidebar';
 import {Header} from '../root/header/Header';
+import {MapExample} from '../incident_details/MapExample';
 
 function ContameRouter() {
   return (
@@ -14,6 +15,10 @@ function ContameRouter() {
       <Switch>
         <Route path={'/users'}>
           <Users />
+        </Route>
+
+        <Route path={'/map'}>
+          <MapExample />
         </Route>
 
         <Route path={'/incidents'}>
