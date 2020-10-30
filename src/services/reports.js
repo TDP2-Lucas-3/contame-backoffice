@@ -1,6 +1,4 @@
 import axios from 'axios';
-import {token} from '../index';
-
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const getIncidents = async () => {

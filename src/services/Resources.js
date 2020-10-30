@@ -10,4 +10,10 @@ export class Resources {
     const response = await this.client.get(url);
     return response.data;
   }
+
+  async users() {
+    const url = `${BACKEND_URL}user/`;
+    const response = await this.client.get(url);
+    return response.data;
+  }
 }
