@@ -19,7 +19,6 @@ const useStyles = makeStyles({
   },
 });
 const Table = (props) => {
-
   const columns = [
     {
       title: 'Email',
