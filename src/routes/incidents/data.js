@@ -1,9 +1,10 @@
-import {renderImagesCollection} from './Utils';
+import {renderImagesCollection, renderTitle} from './Utils';
 
 export const columns = [
   {
     title: 'Titulo',
     field: 'title',
+    render: (row) => renderTitle(row),
   },
   {
     title: 'Categoria',

@@ -20,3 +20,16 @@ export const renderImagesCollection = (row) => {
     </div>
   );
 };
+
+export const renderTitle = (row) => {
+  return (
+    <div>
+      <a
+        key={row.id}
+        href={`/incidents/${row.id}`} //Provisorio
+        style={{textDecoration: 'none'}}>
+        {`${row.title} `}
+      </a>
+    </div>
+  );
+};
