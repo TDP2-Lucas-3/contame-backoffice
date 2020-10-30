@@ -2,12 +2,20 @@ import React from 'react';
 import MaterialTable from 'material-table';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import {makeStyles} from '@material-ui/core/styles';
+import {Container} from '@material-ui/core';
 
 const useStyles = makeStyles({
   centered: {
     position: 'fixed',
-    left: '48%',
+    left: '55%',
     top: '45%',
+    color: '#1F271B',
+  },
+  table: {
+    position: 'relative',
+    left: '117px',
+    top: '90px',
+    width: 1120,
   },
 });
 
@@ -60,22 +68,25 @@ const Table = (props) => {
         row.lon !== 0.0 ? Number.parseFloat(row.lon).toFixed(4) : 'N/A',
     },
     {
-      title: 'Fecha de reporte',
+      title: 'Fecha reporte',
       field: 'creationDate',
       type: 'date',
       align: 'center',
+      dateSetting: {locale: 'es-ES'},
     },
     {
       title: 'Fecha ultima actualizacion',
       field: 'updateDate',
       type: 'date',
+      dateSetting: {locale: 'es-ES'},
     },
     {
-      title: 'Fecha de cierre',
+      title: 'Fecha cierre',
       field: 'completeDate',
       type: 'date',
       emptyValue: 'N/A',
       align: 'center',
+      dateSetting: {locale: 'es-ES'},
     },
     {
       title: 'Imagenes',
@@ -86,11 +97,14 @@ const Table = (props) => {
 
   const options = {
     selection: false,
-    showTitle: false,
     headerStyle: {
-      backgroundColor: '#039be5',
-      color: '#FFF',
-      fontSize: '14pt',
+      backgroundColor: '#F4D35E',
+      color: '#1F271B',
+      fontSize: '11pt',
+      fontWeight: 'bold',
+    },
+    cellStyle: {
+      fontSize: '9pt',
     },
     actionsColumnIndex: -1,
   };
@@ -103,6 +117,9 @@ const Table = (props) => {
       labelDisplayedRows: '{from}-{to} de {count}',
       labelRowsSelect: 'filas',
     },
+    body: {
+      emptyDataSourceMessage: 'No se han registrado incidencias todavia',
+    },
   };
   const classes = useStyles();
 
@@ -111,13 +128,15 @@ const Table = (props) => {
       {!props.data ? (
         <CircularProgress className={classes.centered} />
       ) : (
-        <MaterialTable
-          title="Incidencias"
-          data={props.data}
-          columns={columns}
-          options={options}
-          localization={localization}
-        />
+        <Container className={classes.table}>
+          <MaterialTable
+            title="Incidencias registradas"
+            data={props.data}
+            columns={columns}
+            options={options}
+            localization={localization}
+          />
+        </Container>
       )}
     </div>
   );
