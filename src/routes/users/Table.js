@@ -2,15 +2,22 @@ import React from 'react';
 import MaterialTable from 'material-table';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import {makeStyles} from '@material-ui/core/styles';
+import {Container} from '@material-ui/core';
 
 const useStyles = makeStyles({
   centered: {
     position: 'fixed',
-    left: '48%',
+    left: '55%',
     top: '45%',
+    color: '#1F271B',
+  },
+  table: {
+    position: 'relative',
+    left: '117px',
+    top: '90px',
+    width: 1120,
   },
 });
-
 const Table = (props) => {
   const columns = [
     {
@@ -21,11 +28,14 @@ const Table = (props) => {
 
   const options = {
     selection: false,
-    showTitle: false,
     headerStyle: {
-      backgroundColor: '#039be5',
-      color: '#FFF',
-      fontSize: '14pt',
+      backgroundColor: '#F4D35E',
+      color: '#1F271B',
+      fontSize: '11pt',
+      fontWeight: 'bold',
+    },
+    cellStyle: {
+      fontSize: '9pt',
     },
     actionsColumnIndex: -1,
   };
@@ -38,6 +48,9 @@ const Table = (props) => {
       labelDisplayedRows: '{from}-{to} de {count}',
       labelRowsSelect: 'filas',
     },
+    body: {
+      emptyDataSourceMessage: 'No se han registrado incidencias todavia',
+    },
   };
   const classes = useStyles();
 
@@ -46,13 +59,15 @@ const Table = (props) => {
       {!props.data ? (
         <CircularProgress className={classes.centered} />
       ) : (
-        <MaterialTable
-          title="Usuarios"
-          data={props.data}
-          columns={columns}
-          options={options}
-          localization={localization}
-        />
+        <Container className={classes.table}>
+          <MaterialTable
+            title="Usuarios"
+            data={props.data}
+            columns={columns}
+            options={options}
+            localization={localization}
+          />
+        </Container>
       )}
     </div>
   );
