@@ -1,6 +1,7 @@
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {Home} from '../routes/Home';
 import {Incidents} from '../routes/Incidents';
+import {Users} from '../routes/Users';
 import React from 'react';
 import {Sidebar} from '../root/sidebar/Sidebar';
 import {Header} from '../root/header/Header';
@@ -12,9 +13,14 @@ function ContameRouter() {
       <Sidebar />
       <Header />
       <Switch>
+        <Route path={'/users'}>
+          <Users />
+        </Route>
+
         <Route path={'/map'}>
           <MapExample />
         </Route>
+
         <Route path={'/incidents'}>
           <Incidents />
         </Route>
