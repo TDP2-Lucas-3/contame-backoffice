@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Table} from './users/Table';
+import {Table} from './users/table/Table';
 import {useSelector} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 
