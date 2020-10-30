@@ -39,6 +39,7 @@ const Table = (props) => {
       field: 'registerDate',
       type: 'date',
       dateSetting: {locale: 'es-ES'},
+      defaultSort: 'desc',
     },
     {
       title: 'Ultimo Ingreso',
@@ -58,6 +59,7 @@ const Table = (props) => {
 
   const options = {
     selection: false,
+    sorting: true,
     headerStyle: {
       backgroundColor: '#F4D35E',
       color: '#1F271B',
