@@ -1,13 +1,13 @@
 import React, {useEffect} from 'react';
 import {Table} from './incidents/Table';
-import {getIncidents} from '../services/reports';
+import {useSelector} from 'react-redux';
 
 function Incidents() {
   const [data, setData] = React.useState(null);
-  useEffect(() => {
-    getIncidents().then((response) => {
-      setData(response.data);
-    });
+  const resources = useSelector((state) => state.auth.resources);
+  useEffect(async () => {
+    const incidents = await resources.incidents();
+    setData(incidents);
   }, []);
   return <Table data={data} />;
 }

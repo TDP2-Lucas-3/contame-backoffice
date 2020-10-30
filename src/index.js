@@ -1,21 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import {createStore} from 'redux';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux';
 import {Router} from 'react-router-dom';
 import {ContameRouter} from './routing/ContameRouter';
 import {createBrowserHistory} from 'history';
 import {signIn} from './services/authentication';
+import store from './redux/store';
+import {login} from './redux/auth';
 
-const store = createStore(() => {});
-
-export let token = null;
-
+// Tmp hack to handle auth without a login screen
 (async () => {
   const loginInfo = await signIn();
-  token = loginInfo.data.token;
+  store.dispatch(login(loginInfo.data.token));
 })();
 
 ReactDOM.render(
