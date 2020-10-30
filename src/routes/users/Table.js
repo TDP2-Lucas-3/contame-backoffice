@@ -13,16 +13,46 @@ const useStyles = makeStyles({
   },
   table: {
     position: 'relative',
-    left: '117px',
+    left: '108px',
     top: '90px',
-    width: 1120,
+    width: 1100,
   },
 });
 const Table = (props) => {
+
   const columns = [
     {
       title: 'Email',
       field: 'email',
+    },
+
+    {
+      title: 'Nombre',
+      field: 'name',
+    },
+    {
+      title: 'Apellido',
+      field: 'surname',
+    },
+    {
+      title: 'Fecha Registro',
+      field: 'registerDate',
+      type: 'date',
+      dateSetting: {locale: 'es-ES'},
+    },
+    {
+      title: 'Ultimo Ingreso',
+      field: 'lastLoginDate',
+      type: 'date',
+      dateSetting: {locale: 'es-ES'},
+    },
+    {
+      title: 'Cantidad de reportes',
+      field: 'incidentCount',
+    },
+    {
+      title: 'Estado',
+      field: 'state',
     },
   ];
 
