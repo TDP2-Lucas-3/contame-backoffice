@@ -63,9 +63,11 @@ const Table = (props) => {
       color: '#1F271B',
       fontSize: '11pt',
       fontWeight: 'bold',
+      textAlign: 'left',
     },
     cellStyle: {
       fontSize: '9pt',
+      textAlign: 'left',
     },
     actionsColumnIndex: -1,
   };
