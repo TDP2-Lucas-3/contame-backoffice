@@ -1,3 +1,5 @@
+import {useEffect, useState} from 'react';
+
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 export class Resources {
@@ -17,3 +19,14 @@ export class Resources {
     return response.data;
   }
 }
+
+export const useGetResource = (fetchResource) => {
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    (async () => {
+      const resource = await fetchResource();
+      setData(resource);
+    })();
+  }, [fetchResource]);
+  return data;
+};

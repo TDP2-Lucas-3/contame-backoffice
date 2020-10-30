@@ -21,7 +21,7 @@ function ContameRouter() {
           <MapExample />
         </Route>
 
-        <Route exact path={'/incidents'}>
+        <Route exact path={'/incidents/:id'} >
           <Incidents />
         </Route>
 
