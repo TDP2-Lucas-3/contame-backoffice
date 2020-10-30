@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Table} from './incidents/Table';
+import {Table} from './incidents/table/Table';
 import {useSelector} from 'react-redux';
 
 function Incidents() {

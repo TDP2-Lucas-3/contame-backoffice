@@ -13,19 +13,19 @@ function ContameRouter() {
       <Sidebar />
       <Header />
       <Switch>
-        <Route path={'/users'}>
+        <Route exact path={'/users'}>
           <Users />
         </Route>
 
-        <Route path={'/map'}>
+        <Route exact path={'/map'}>
           <MapExample />
         </Route>
 
-        <Route path={'/incidents'}>
+        <Route exact path={'/incidents'}>
           <Incidents />
         </Route>
 
-        <Route path={'/'}>
+        <Route exact path={'/'}>
           <Home />
         </Route>
       </Switch>
