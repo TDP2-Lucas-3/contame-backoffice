@@ -1,4 +1,4 @@
-import {renderImagesCollection} from './utils';
+import {renderImagesCollection} from './Utils';
 
 export const columns = [
   {
