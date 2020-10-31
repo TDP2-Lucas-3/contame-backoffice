@@ -22,10 +22,4 @@ export const SidebarData = [
     icon: <MdIcons.MdReport />,
     cName: 'nav-text',
   },
-  {
-    title: 'Incidente 1',
-    path: '/incidents/1',
-    icon: <AiIcons.AiFillHome />,
-    cName: 'nav-text',
-  },
 ];
