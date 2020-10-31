@@ -8,7 +8,7 @@ export const loginStatus = {
 
 const initialAuth = {
   status: loginStatus.NOT_LOGGED,
-  resources: null,
+  resources: new Resources(new HttpClient(null)),
 };
 
 const LOG_IN = 'LOG_IN';

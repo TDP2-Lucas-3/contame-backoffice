@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {useCallback, useEffect, useState} from 'react';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
@@ -27,12 +27,13 @@ export class Resources {
 }
 
 export const useGetResource = (fetchResource) => {
+  const callback = useCallback(fetchResource, []);
   const [data, setData] = useState(null);
   useEffect(() => {
     (async () => {
-      const resource = await fetchResource();
-      setData(resource);
+      const resource = await callback();
+      setData(() => resource);
     })();
-  }, [fetchResource]);
+  }, [callback]);
   return data;
 };
