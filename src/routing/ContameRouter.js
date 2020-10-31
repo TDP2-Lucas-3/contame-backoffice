@@ -1,6 +1,6 @@
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {Home} from '../routes/Home';
-import {Incidents} from '../routes/Incidents';
+import {Incidents, IncidentDetail} from '../routes/Incidents';
 import {Users} from '../routes/Users';
 import React from 'react';
 import {Sidebar} from '../root/sidebar/Sidebar';
@@ -21,8 +21,12 @@ function ContameRouter() {
           <MapExample />
         </Route>
 
-        <Route exact path={'/incidents/:id'} >
+        <Route exact path={'/incidents'}>
           <Incidents />
+        </Route>
+
+        <Route exact path={'/incidents/1'}>
+          <IncidentDetail id={1} />
         </Route>
 
         <Route exact path={'/'}>

@@ -18,6 +18,12 @@ export class Resources {
     const response = await this.client.get(url);
     return response.data;
   }
+
+  async incident(id) {
+    const url = `${BACKEND_URL}incident/${id}`;
+    const response = await this.client.get(url);
+    return response.data;
+  }
 }
 
 export const useGetResource = (fetchResource) => {
