@@ -25,8 +25,8 @@ function ContameRouter() {
           <Incidents />
         </Route>
 
-        <Route exact path={'/incidents/1'}>
-          <IncidentDetail id={1} />
+        <Route exact path={'/incidents/2'}>
+          <IncidentDetail id={2} />
         </Route>
 
         <Route exact path={'/'}>
