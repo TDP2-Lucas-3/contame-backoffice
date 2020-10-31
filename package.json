@@ -10,7 +10,7 @@
     "axios": "^0.20.0",
     "eslint-plugin-react": "^7.21.4",
     "history": "^5.0.0",
-    "material-table": "^1.69.1",
+    "material-table": "1.61.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-google-maps": "^9.4.5",
