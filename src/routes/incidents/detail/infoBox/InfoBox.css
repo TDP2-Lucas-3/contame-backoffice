@@ -3,11 +3,11 @@
     border-radius: 10px;
     box-shadow: 0px 1px 4px #A0A0A0;
     display: flex;
-    height: 65px;
+    height: 55px;
     justify-content: flex-start;
     left:230px;
     position: absolute;
-    top: 400px;
+    top: 410px;
     width: 120px;
 }
 
@@ -19,8 +19,8 @@
     height: 80px;
     justify-content: flex-start;
     left: 45px;
-    position: relative;
-    top: 15px;
+    position: absolute;
+    top: 10px;
     width: 30px;
 }
 
@@ -32,8 +32,15 @@
     font-weight: bold;
     height: 80px;
     justify-content: flex-start;
-    left: 0px;
-    position: relative;
+    left: 40px;
+    position: absolute;
     top: 30px;
     width: 30px;
+}
+
+.info-box-icon {
+    color: #F4D35E;
+    left: 12px;
+    position: relative;
+    top: 17px;
 }

@@ -1,11 +1,16 @@
 import React from 'react';
 import './InfoBox.css';
+import {AiFillCalendar} from 'react-icons/all';
+import {IconContext} from 'react-icons';
 
 export const InfoBox = (props) => {
   return (
-    <div className="info-box">
-      <h1 className="info-box-header">{props.header}</h1>
-      <label className="info-box-content">{props.data}</label>
-    </div>
+    <IconContext.Provider value={{className: 'info-box-icon'}}>
+      <div className="info-box">
+        <AiFillCalendar />
+        <h1 className="info-box-header">{props.header}</h1>
+        <label className="info-box-content">{props.data}</label>
+      </div>
+    </IconContext.Provider>
   );
 };
