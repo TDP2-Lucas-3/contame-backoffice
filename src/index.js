@@ -6,15 +6,7 @@ import {Provider} from 'react-redux';
 import {Router} from 'react-router-dom';
 import {ContameRouter} from './routing/ContameRouter';
 import {createBrowserHistory} from 'history';
-import {signIn} from './services/authentication';
 import store from './redux/store';
-import {login} from './redux/auth';
-
-// Tmp hack to handle auth without a login screen
-(async () => {
-  const loginInfo = await signIn();
-  store.dispatch(login(loginInfo.data.token));
-})();
 
 ReactDOM.render(
   <React.StrictMode>
