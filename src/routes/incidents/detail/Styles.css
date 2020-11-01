@@ -17,3 +17,11 @@
     position: absolute;
     top: 13px;
 }
+
+.map {
+    border-radius: 10px;
+    margin-left: 740px;
+    overflow: hidden;
+    top: 13px;
+    width: 500px;
+}

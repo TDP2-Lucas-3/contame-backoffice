@@ -5,7 +5,6 @@ import {Users} from '../routes/Users';
 import React from 'react';
 import {Sidebar} from '../root/sidebar/Sidebar';
 import {Header} from '../root/header/Header';
-import {MapExample} from '../incident_details/MapExample';
 
 function ContameRouter() {
   return (
@@ -17,16 +16,12 @@ function ContameRouter() {
           <Users />
         </Route>
 
-        <Route exact path={'/map'}>
-          <MapExample />
-        </Route>
-
         <Route exact path={'/incidents'}>
           <Incidents />
         </Route>
 
-        <Route exact path={'/incidents/4'}>
-          <IncidentDetail id={4} />
+        <Route exact path={'/incidents/5'}>
+          <IncidentDetail id={5} />
         </Route>
 
         <Route exact path={'/'}>

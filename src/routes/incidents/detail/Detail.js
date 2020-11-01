@@ -8,6 +8,7 @@ import {Description} from './description/Description';
 import {InfoBox} from './infoBox/InfoBox';
 import Moment from 'moment';
 import {IncidentCarousel} from './carousel/Carousel';
+import {Map} from './map/MapWrapper';
 
 export const Detail = (props) => {
   const classes = useStyles();
@@ -19,7 +20,13 @@ export const Detail = (props) => {
       ) : (
         <Container>
           <h1 className="title">{props.data.title}</h1>
-          <IncidentCarousel images={props.data.images}/>
+          <div className="map">
+            <Map
+              lat={parseFloat(props.data.lat)}
+              lon={parseFloat(props.data.lon)}
+            />
+          </div>
+          <IncidentCarousel images={props.data.images} />
           <Description data={props.data.description} />
           <InfoBox
             data={Moment(props.data.creationDate).format('DD/MM/YYYY')}

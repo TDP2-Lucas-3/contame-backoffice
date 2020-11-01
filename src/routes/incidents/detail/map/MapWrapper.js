@@ -1,13 +1,15 @@
 import React from 'react';
 import {MyMapComponent} from './map';
 
-export function MapExample() {
+export const Map = (props) => {
   return (
     <MyMapComponent
       googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
       loadingElement={<div style={{height: `100%`}} />}
-      containerElement={<div style={{height: `1000px`}} />}
+      containerElement={<div style={{height: `250px`}} />}
       mapElement={<div style={{height: `100%`}} />}
+      lat={props.lat}
+      lng={props.lon}
     />
   );
 }
