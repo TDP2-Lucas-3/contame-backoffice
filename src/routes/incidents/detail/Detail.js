@@ -19,7 +19,7 @@ export const Detail = (props) => {
       ) : (
         <Container>
           <h1 className="title">{props.data.title}</h1>
-          <IncidentCarousel />
+          <IncidentCarousel images={props.data.images}/>
           <Description data={props.data.description} />
           <InfoBox
             data={Moment(props.data.creationDate).format('DD/MM/YYYY')}
