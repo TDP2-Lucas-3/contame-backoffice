@@ -28,10 +28,24 @@ export const Detail = (props) => {
           </div>
           <IncidentCarousel images={props.data.images} />
           <Description data={props.data.description} />
-          <InfoBox
-            data={Moment(props.data.creationDate).format('DD/MM/YYYY')}
-            header={'Creada'}
-          />
+          <div className="creation-date">
+            <InfoBox
+              data={Moment(props.data.creationDate).format('DD/MM/YYYY')}
+              header={'Creada'}
+            />
+          </div>
+          <div className="update-date">
+            <InfoBox
+              data={Moment(props.data.updateDate).format('DD/MM/YYYY')}
+              header={'Actualizada'}
+            />
+          </div>
+          <div className="close-date">
+            <InfoBox
+              data={Moment(props.data.completeDate).format('DD/MM/YYYY')}
+              header={'Cierre'}
+            />
+          </div>
         </Container>
       )}
     </div>

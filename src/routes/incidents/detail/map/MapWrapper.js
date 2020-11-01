@@ -2,6 +2,7 @@ import React from 'react';
 import {MyMapComponent} from './map';
 
 export const Map = (props) => {
+  if (!props.lat || !props.lon) return null;
   return (
     <MyMapComponent
       googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
@@ -12,4 +13,4 @@ export const Map = (props) => {
       lng={props.lon}
     />
   );
-}
+};
