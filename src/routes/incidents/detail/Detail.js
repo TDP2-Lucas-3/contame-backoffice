@@ -7,6 +7,7 @@ import {useStyles} from '../table/Styles';
 import {Description} from './description/Description';
 import {InfoBox} from './infoBox/InfoBox';
 import Moment from 'moment';
+import {IncidentCarousel} from './carousel/Carousel';
 
 export const Detail = (props) => {
   const classes = useStyles();
@@ -18,6 +19,7 @@ export const Detail = (props) => {
       ) : (
         <Container>
           <h1 className="title">{props.data.title}</h1>
+          <IncidentCarousel />
           <Description data={props.data.description} />
           <InfoBox
             data={Moment(props.data.creationDate).format('DD/MM/YYYY')}
