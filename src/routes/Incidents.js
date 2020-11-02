@@ -1,12 +1,19 @@
-import React from 'react';
-import {Table} from './incidents/Table';
+import {Table} from './incidents/table/Table';
+import {Detail} from './incidents/detail/Detail';
 import {useSelector} from 'react-redux';
 import {useGetResource} from '../services/Resources';
+import React from 'react';
 
 function Incidents() {
   const resources = useSelector((state) => state.auth.resources);
   const incidents = useGetResource(() => resources.incidents());
   return <Table data={incidents} />;
 }
+
+export const IncidentDetail = ({match}) => {
+  const resources = useSelector((state) => state.auth.resources);
+  const incident = useGetResource(() => resources.incident(match.params.id));
+  return <Detail data={incident} />;
+};
 
 export {Incidents};

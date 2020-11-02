@@ -1,11 +1,10 @@
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {Home} from '../routes/Home';
-import {Incidents} from '../routes/Incidents';
+import {Incidents, IncidentDetail} from '../routes/Incidents';
 import {Users} from '../routes/Users';
 import React from 'react';
 import {Sidebar} from '../root/sidebar/Sidebar';
 import {Header} from '../root/header/Header';
-import {MapExample} from '../incident_details/MapExample';
 
 function ContameRouter() {
   return (
@@ -13,19 +12,17 @@ function ContameRouter() {
       <Sidebar />
       <Header />
       <Switch>
-        <Route path={'/users'}>
+        <Route exact path={'/users'}>
           <Users />
         </Route>
 
-        <Route path={'/map'}>
-          <MapExample />
-        </Route>
-
-        <Route path={'/incidents'}>
+        <Route exact path={'/incidents'}>
           <Incidents />
         </Route>
 
-        <Route path={'/'}>
+        <Route exact path={'/incidents/:id'} component={IncidentDetail} />
+
+        <Route exact path={'/'}>
           <Home />
         </Route>
       </Switch>

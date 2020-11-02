@@ -1,0 +1,24 @@
+.carousel-box {
+    left:215px;
+    top:100px;
+    height: 300px;
+    width: 530px;
+    position:absolute;
+}
+
+.incident-image {
+    height: 280px;
+    width: 500px;
+    border-radius: 10px;
+}
+
+button.rec-dot{
+    box-shadow: 0 0 1px 1px #1F271B;
+    background-color: #FFF;
+}
+
+button.rec-dot:hover, button.rec-dot:active, button.rec-dot:focus  {
+    box-shadow: 0 0 1px 2px #1F271B;
+    background-color: #F4D35E;
+}
+
