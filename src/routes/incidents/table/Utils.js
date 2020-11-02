@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 export const renderImagesCollection = (row) => {
   return (
@@ -6,14 +7,14 @@ export const renderImagesCollection = (row) => {
       {row.images.length > 0
         ? row.images.map((image, index) => {
             return (
-              <a
+              <Link
                 key={index}
                 href={image}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{textDecoration: 'none'}}>
                 {`${++index} `}
-              </a>
+              </Link>
             );
           })
         : 'N/A'}
@@ -24,12 +25,12 @@ export const renderImagesCollection = (row) => {
 export const renderTitle = (row) => {
   return (
     <div>
-      <a
+      <Link
         key={row.id}
-        href={`/incidents/${row.id}`} //Provisorio
-        style={{textDecoration: 'none'}}>
+        to={`/incidents/${row.id}`} //Provisorio
+        style={{textDecoration: 'none', fontWeight: 'bold'}}>
         {`${row.title} `}
-      </a>
+      </Link>
     </div>
   );
 };
