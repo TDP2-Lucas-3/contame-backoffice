@@ -21,7 +21,7 @@ export const Detail = (props) => {
       ) : (
         <Container>
           <h1 className="title">{props.data.title}</h1>
-          <ReportedLabel state={props.data.state}/>
+          <ReportedLabel state={props.data.state} />
           <div className="map">
             <Map
               lat={parseFloat(props.data.lat)}
