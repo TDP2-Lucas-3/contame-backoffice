@@ -61,6 +61,6 @@ export const localization = {
     labelRowsSelect: 'filas',
   },
   body: {
-    emptyDataSourceMessage: 'No se han registrado incidencias todavia',
+    emptyDataSourceMessage: 'No se han encontrado usuarios',
   },
 };
