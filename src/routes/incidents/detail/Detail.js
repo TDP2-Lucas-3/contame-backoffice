@@ -9,6 +9,7 @@ import {InfoBox} from './infoBox/InfoBox';
 import Moment from 'moment';
 import {IncidentCarousel} from './carousel/Carousel';
 import {Map} from './map/MapWrapper';
+import {ReportedLabel} from './stateLabel/reported/ReportedLabel';
 
 export const Detail = (props) => {
   const classes = useStyles();
@@ -20,6 +21,7 @@ export const Detail = (props) => {
       ) : (
         <Container>
           <h1 className="title">{props.data.title}</h1>
+          <ReportedLabel state={props.data.state}/>
           <div className="map">
             <Map
               lat={parseFloat(props.data.lat)}
