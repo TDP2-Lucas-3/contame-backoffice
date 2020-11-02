@@ -3,7 +3,7 @@ import Carousel from 'react-elastic-carousel';
 import './Carousel.css';
 export const IncidentCarousel = (props) => {
   const PLACEHOLDER = process.env.REACT_APP_PLACEHOLDER_URL;
-  if (props.images.length == 0) props.images.push(PLACEHOLDER);
+  if (props.images.length === 0) props.images.push(PLACEHOLDER);
 
   return (
     <div className="carousel-box">
