@@ -10,9 +10,9 @@ function Incidents() {
   return <Table data={incidents} />;
 }
 
-export const IncidentDetail = (props) => {
+export const IncidentDetail = ({match}) => {
   const resources = useSelector((state) => state.auth.resources);
-  const incident = useGetResource(() => resources.incident(props.id));
+  const incident = useGetResource(() => resources.incident(match.params.id));
   return <Detail data={incident} />;
 };
 

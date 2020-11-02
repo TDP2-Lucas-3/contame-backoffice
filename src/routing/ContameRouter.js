@@ -20,9 +20,7 @@ function ContameRouter() {
           <Incidents />
         </Route>
 
-        <Route exact path={'/incidents/1'}>
-          <IncidentDetail id={1} />
-        </Route>
+        <Route exact path={'/incidents/:id'} component={IncidentDetail} />
 
         <Route exact path={'/'}>
           <Home />
