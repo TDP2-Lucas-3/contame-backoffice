@@ -32,6 +32,7 @@ export const TextBox = (props) => {
           variant="outlined"
           className="password-box"
           InputLabelProps={{shrink: false}}
+          onChange={(e) => props.setPassword(e.target.value)}
         />
       ) : (
         <CssTextField
@@ -40,6 +41,7 @@ export const TextBox = (props) => {
           variant="outlined"
           id="emailText"
           InputLabelProps={{shrink: false}}
+          onChange={(e) => props.setEmail(e.target.value)}
         />
       )}
     </>
