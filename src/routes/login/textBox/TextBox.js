@@ -6,15 +6,15 @@ import withStyles from '@material-ui/core/styles/withStyles';
 const CssTextField = withStyles({
   root: {
     '& label.Mui-focused': {
-      color: 'white',
-      fontSize: '0pt',
+      color: '#1F271B',
+      fontSize: '14pt',
     },
     '& .MuiInput-underline:after': {
       borderBottomColor: 'green',
     },
     '& .MuiOutlinedInput-root': {
       '&.Mui-focused fieldset': {
-        borderColor: '#F4D35E',
+        borderColor: '#1F271B',
       },
     },
   },
@@ -31,7 +31,6 @@ export const TextBox = (props) => {
           autoComplete="current-password"
           variant="outlined"
           className="password-box"
-          InputLabelProps={{shrink: false}}
           onChange={(e) => props.setPassword(e.target.value)}
         />
       ) : (
@@ -40,7 +39,6 @@ export const TextBox = (props) => {
           label={props.text}
           variant="outlined"
           id="emailText"
-          InputLabelProps={{shrink: false}}
           onChange={(e) => props.setEmail(e.target.value)}
         />
       )}

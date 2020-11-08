@@ -8,7 +8,7 @@
     left:36%;
     bottom:20%;
     position: fixed;
-    background-color: #1F271B;
+    background-color: #f4f4f4;
     box-shadow: 0px 1px 8px #A0A0A0;
 }
 
@@ -16,7 +16,7 @@
     position: absolute;
     right:44%;
     bottom:85%;
-    color: #f5f5f5;
+    color: #1F271B;
     font-size: 26pt;
     font-weight: bold;
     text-decoration: none;
@@ -25,7 +25,7 @@
 
 .sub-title {
     position: absolute;
-    color: #f5f5f5;
+    color: #1F271B;
     right:41%;
     bottom:77%;
     font-size: 14pt;
@@ -33,7 +33,7 @@
 }
 
 .yellow-text {
-    color: #F4D35E;
+    color: #f3c624;
     font-size: 26pt;
     font-weight: bold;
     text-decoration: none;

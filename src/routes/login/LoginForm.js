@@ -17,7 +17,6 @@ export const LoginForm = () => {
     dispatch(login(response.data.token));
     console.log(response.data.token);
     if (!response.data.token) {
-      history.push('/incidents');
     }
   };
 
