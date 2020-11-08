@@ -1,7 +1,7 @@
 import React from 'react';
-import {LoginForm} from './login/LoginForm';
+import {LoginContainer} from './login/LoginContainer';
 import {withRouter} from 'react-router-dom';
 
 export const Login = withRouter(() => {
-  return <LoginForm />;
+  return <LoginContainer />;
 });

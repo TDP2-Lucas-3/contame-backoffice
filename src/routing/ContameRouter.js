@@ -12,10 +12,14 @@ function ContameRouter() {
     <BrowserRouter>
       <Switch>
         <Route exact path={'/users'}>
+          <Sidebar />
+          <Header />
           <Users />
         </Route>
 
         <Route exact path={'/incidents'}>
+          <Sidebar />
+          <Header />
           <Incidents />
         </Route>
 
@@ -26,6 +30,8 @@ function ContameRouter() {
         </Route>
 
         <Route exact path={'/'}>
+          <Sidebar />
+          <Header />
           <Home />
         </Route>
       </Switch>
