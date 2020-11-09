@@ -4,20 +4,18 @@ import {Sidebar} from '../root/sidebar/Sidebar';
 import {Header} from '../root/header/Header';
 
 export const PrivateRoute = ({component: Component, authed, ...rest}) => {
-  return (
+  return authed === 0 ? (
     <Route
       {...rest}
-      render={(props) =>
-        authed === 0 ? (
-          <>
-            <Sidebar />
-            <Header />
-            <Component {...props} />
-          </>
-        ) : (
-          <Redirect to={{pathname: '/login', state: {from: props.location}}} />
-        )
-      }
+      render={(props) => (
+        <>
+          <Sidebar />
+          <Header />
+          <Component {...props} />
+        </>
+      )}
     />
+  ) : (
+    <Redirect to={{pathname: '/login'}} />
   );
 };
