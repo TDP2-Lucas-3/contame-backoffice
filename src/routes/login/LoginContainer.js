@@ -13,8 +13,8 @@ export const LoginContainer = () => {
 
   const onSubmit = async () => {
     const response = await signIn(email, password);
-    dispatch(login(response.data.token));
-    if (response.data.token) {
+    if (response.status === 200) {
+      dispatch(login(response.data.token));
       history.push('/');
     }
   };
