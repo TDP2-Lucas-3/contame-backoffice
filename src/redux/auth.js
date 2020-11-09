@@ -17,21 +17,15 @@ const LOG_OUT = 'LOG_OUT';
 const exampleUser = {name: 'Test User'};
 
 export function auth(initial = initialAuth, action) {
-  console.log(action.type);
   switch (action.type) {
     case LOG_IN: {
-      console.log('log_in');
       return {status: loginStatus.LOGGED, resources: action.resources};
     }
     case LOG_OUT: {
-      console.log('log_out');
       return initialAuth;
     }
     default:
-    {
-      console.log('default');
       return initial;
-    }
   }
 }
 

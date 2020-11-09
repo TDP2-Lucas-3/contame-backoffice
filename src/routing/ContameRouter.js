@@ -13,6 +13,8 @@ function ContameRouter() {
   const authed = useSelector((state) => state.auth.status);
   return (
     <BrowserRouter>
+      <Sidebar />
+      <Header />
       <Switch>
         <PrivateRoute authed={authed} exact path={'/users'} component={Users} />
         <PrivateRoute
