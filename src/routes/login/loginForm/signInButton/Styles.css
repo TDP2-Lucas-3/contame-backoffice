@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext');
+
+.sign-in-button {
+    position: absolute;
+    top: 75%;
+    left: 10%;
+    width: 80%;
+    height: 12%;
+    background-color: #F4D35E;
+    color: #1F271B;
+    font-size: 13pt;
+    font-weight: bold;
+    border-radius: 8px;
+    font-family: Noto Sans CJK JP Black;
+
+}
+
+.sign-in-button:hover, .sign-in-button:focus{
+    background-color:#ffda43;
+}
+
+.sign-in-button:active {
+    background-color: #ffda43;
+    border: 3px #ffda43;
+}
