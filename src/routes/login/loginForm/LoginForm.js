@@ -4,7 +4,6 @@ import './Styles.css';
 import {TextBox} from './textBox/TextBox';
 import {SignInButton} from './signInButton/SignInButton';
 
-
 export const LoginForm = (props) => {
   return (
     <Container className="login-box">
