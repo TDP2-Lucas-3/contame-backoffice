@@ -15,7 +15,7 @@ export const LoginContainer = () => {
     const response = await signIn(email, password);
     dispatch(login(response.data.token));
     if (response.data.token) {
-      history.push("/");
+      history.push('/');
     }
   };
 

@@ -6,34 +6,33 @@ import React from 'react';
 import {Sidebar} from '../root/sidebar/Sidebar';
 import {Header} from '../root/header/Header';
 import {Login} from '../routes/Login';
+import {PrivateRoute} from './PrivateRoute';
+import {useSelector} from 'react-redux';
 
 function ContameRouter() {
+  const authed = useSelector((state) => state.auth.status);
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path={'/users'}>
-          <Sidebar />
-          <Header />
-          <Users />
-        </Route>
-
-        <Route exact path={'/incidents'}>
-          <Sidebar />
-          <Header />
-          <Incidents />
-        </Route>
-
-        <Route exact path={'/incidents/:id'} component={IncidentDetail} />
+        <PrivateRoute authed={authed} exact path={'/users'} component={Users} />
+        <PrivateRoute
+          authed={authed}
+          exact
+          path={'/incidents'}
+          component={Incidents}
+        />
+        <PrivateRoute
+          authed={authed}
+          exact
+          path={'/incidents/:id'}
+          component={IncidentDetail}
+        />
 
         <Route exact path={'/login'}>
           <Login />
         </Route>
 
-        <Route exact path={'/'}>
-          <Sidebar />
-          <Header />
-          <Home />
-        </Route>
+        <PrivateRoute authed={authed} exact path={'/'} component={Home} />
       </Switch>
     </BrowserRouter>
   );
