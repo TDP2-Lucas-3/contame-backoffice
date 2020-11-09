@@ -1,7 +1,8 @@
 import Container from 'react-bootstrap/Container';
 import React from 'react';
 import './Styles.css';
-import {TextBox} from './textBox/TextBox';
+import {EmailTextBox} from './textBox/emailTextBox/EmailTextBox';
+import {PasswordTextBox} from './textBox/passwordTextBox/PasswordTextBox';
 import {SignInButton} from './signInButton/SignInButton';
 
 export const LoginForm = (props) => {
@@ -11,16 +12,13 @@ export const LoginForm = (props) => {
         Conta<div className="yellow-text">ME</div>
       </div>
       <div className="sub-title">Acceder</div>
-      <TextBox
+      <EmailTextBox
         text={'Email'}
-        type={''}
-        className="email-text"
         email={props.email}
         setEmail={props.setEmail}
       />
-      <TextBox
+      <PasswordTextBox
         text={'Contraseña'}
-        type={'password'}
         password={props.password}
         setPassword={props.setPassword}
       />
