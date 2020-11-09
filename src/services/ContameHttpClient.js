@@ -1,5 +1,4 @@
 import axios from 'axios';
-import {signIn} from './authentication';
 
 export class HttpClient {
   constructor(token) {
@@ -11,8 +10,6 @@ export class HttpClient {
   }
 
   async request(url, method, data, headers) {
-    // Hack!!
-
     headers = headers || {};
     headers = {...headers, Authorization: `Bearer ${this.token}`};
     return await axios.request({url, method, data, headers});
