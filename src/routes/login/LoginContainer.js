@@ -30,27 +30,15 @@ export const LoginContainer = () => {
   };
 
   return (
-    <div>
-      {auth === false ? (
-        <div>
-          <LoginForm
-            email={email}
-            setEmail={setEmail}
-            password={password}
-            setPassword={setPassword}
-            onSubmit={onSubmit}
-          />
-          <LoginErrorLabel className="error-labels" />
-        </div>
-      ) : (
-        <LoginForm
-          email={email}
-          setEmail={setEmail}
-          password={password}
-          setPassword={setPassword}
-          onSubmit={onSubmit}
-        />
-      )}
-    </div>
+    <>
+      <LoginForm
+        email={email}
+        setEmail={setEmail}
+        password={password}
+        setPassword={setPassword}
+        onSubmit={onSubmit}
+      />
+      {auth === false ? <LoginErrorLabel className="error-labels" /> : null}
+    </>
   );
 };
