@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext');
+
+.error-label {
+    color: red;
+    font-family: Noto Sans CJK JP;
+}

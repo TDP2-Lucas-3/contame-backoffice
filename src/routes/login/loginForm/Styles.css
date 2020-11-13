@@ -41,7 +41,12 @@
     left:100%;
     bottom:0%;
     font-family: Noto Sans CJK JP;
+}
 
+.error-label {
+    top:60%;
+    left:41%;
+    position:absolute;
 }
 
 
