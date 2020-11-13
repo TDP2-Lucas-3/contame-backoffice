@@ -1,4 +1,4 @@
-import {renderImagesCollection, renderTitle} from './Utils';
+import {renderTitle} from './Utils';
 
 export const columns = [
   {
@@ -9,23 +9,6 @@ export const columns = [
   {
     title: 'Categoria',
     field: 'category.name',
-  },
-  {
-    title: 'Descripcion',
-    field: 'description',
-    emptyValue: 'N/A',
-  },
-  {
-    title: 'Latitud',
-    field: 'lat',
-    render: (row) =>
-      row.lat !== 0.0 ? Number.parseFloat(row.lat).toFixed(4) : 'N/A',
-  },
-  {
-    title: 'Longitud',
-    field: 'lon',
-    render: (row) =>
-      row.lon !== 0.0 ? Number.parseFloat(row.lon).toFixed(4) : 'N/A',
   },
   {
     title: 'Fecha reporte',
@@ -49,9 +32,13 @@ export const columns = [
     dateSetting: {locale: 'es-ES'},
   },
   {
-    title: 'Imagenes',
-    field: 'images',
-    render: (row) => renderImagesCollection(row),
+    title: 'Barrio',
+    field: 'hood',
+    emptyValue: 'N/A',
+  },
+  {
+    title: 'Votos',
+    field: 'votes',
   },
 ];
 
