@@ -1,1 +1,1 @@
-export const categories = ['EDILICIO', 'INSEGURIDAD'];
+export const categories = ['Edilicio', 'Inseguridad', 'Reporte'];
