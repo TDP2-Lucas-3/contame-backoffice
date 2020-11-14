@@ -5,22 +5,39 @@ import {Container} from 'react-bootstrap';
 import {useStyles} from './Styles';
 import {columns, options, localization} from './data';
 import {HoodFilter} from './filter/hoodFilter/HoodFilter';
+import {CategoryFilter} from './filter/categoryFilter/CategoryFilter';
 import './Styles.css';
 
 const Table = (props) => {
   const classes = useStyles();
   const [filteredData, setFiltered] = useState(null);
-  const [filters, setFilters] = useState([]);
+  const [hoodFilters, setHoodFilters] = useState([]);
+  const [categoryFilters, setCategoryFilters] = useState([]);
 
-  const filterData = (hoodsFilter, data) => {
-    const hoods = hoodsFilter.map((filter) => filter.label);
+  const filterData = (hoodFilter, categoryFilter, data) => {
+    const hoods = hoodFilter.map((filter) => filter.label);
+    const categories = categoryFilter.map((filter) => filter.label);
+
     return data.filter((incident) => {
-      return hoods.includes(incident.hood);
+      if (hoodFilters.length > 0 && categoryFilters.length > 0) {
+        return (
+          hoods.includes(incident.hood) &&
+          categories.includes(incident.category.name)
+        );
+      }
+      if (hoodFilters.length > 0) {
+        return hoods.includes(incident.hood);
+      }
+      return categories.includes(incident.category.name);
     });
   };
 
-  const handleChange = (newVal) => {
-    setFilters(newVal);
+  const handleHoodFilterChange = (newVal) => {
+    setHoodFilters(newVal);
+  };
+
+  const handleCategoryFilterChange = (newVal) => {
+    setCategoryFilters(newVal);
   };
 
   const isFirstRun = useRef(true);
@@ -30,11 +47,11 @@ const Table = (props) => {
         isFirstRun.current = false;
         return;
       }
-      filters.length > 0
-        ? setFiltered(filterData(filters, props.data))
+      hoodFilters.length > 0 || categoryFilters.length > 0
+        ? setFiltered(filterData(hoodFilters, categoryFilters, props.data))
         : setFiltered(props.data);
     })();
-  }, [filters, props.data]);
+  }, [hoodFilters, categoryFilters, props.data]);
 
   return (
     <div>
@@ -43,7 +60,10 @@ const Table = (props) => {
       ) : (
         <Container>
           <Container className="hood-filter">
-            <HoodFilter handleChange={handleChange} />
+            <HoodFilter handleChange={handleHoodFilterChange} />
+          </Container>
+          <Container className="category-filter">
+            <CategoryFilter handleChange={handleCategoryFilterChange} />
           </Container>
 
           <Container className="table">

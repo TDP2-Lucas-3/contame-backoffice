@@ -6,6 +6,14 @@
     font-size: 9pt;
 }
 
+.category-filter {
+    width: 20%;
+    position: absolute;
+    left: 40%;
+    top: 20%;
+    font-size: 9pt;
+}
+
 .table {
     position: absolute;
     left: 17.5%;
