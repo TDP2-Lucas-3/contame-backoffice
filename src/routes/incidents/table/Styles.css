@@ -1,0 +1,15 @@
+.hood-filter {
+    width: 20%;
+    position: absolute;
+    left: 18%;
+    top: 20%;
+    font-size: 9pt;
+}
+
+.table {
+    position: absolute;
+    left: 17.5%;
+    top: 17%;
+    width: 85%;
+    z-index: -1;
+}
