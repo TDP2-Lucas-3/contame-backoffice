@@ -16,17 +16,17 @@ export const Table = (props) => {
         <CircularProgress className={classes.centered} />
       ) : (
         <Container>
-          <Container className="hood-filter">
+          <div className="hood-filter">
             <HoodFilter
               data={props.data}
               handleChange={props.handleHoodFilterChange}
             />
-          </Container>
-          <Container className="category-filter">
+          </div>
+          <div className="category-filter">
             <CategoryFilter handleChange={props.handleCategoryFilterChange} />
-          </Container>
+          </div>
 
-          <Container className="table">
+          <div className="table">
             <MaterialTable
               title=""
               data={!props.filteredData ? props.data : props.filteredData}
@@ -34,7 +34,7 @@ export const Table = (props) => {
               options={options}
               localization={localization}
             />
-          </Container>
+          </div>
         </Container>
       )}
     </div>
