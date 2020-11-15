@@ -1,9 +1,9 @@
 import './Styles.css';
 import React from 'react';
 import Container from '@material-ui/core/Container';
-import '../table/Styles';
+import '../filteredTable/table/Styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import {useStyles} from '../table/Styles';
+import {useStyles} from '../filteredTable/table/Styles';
 import {Description} from './description/Description';
 import {InfoBox} from './infoBox/InfoBox';
 import Moment from 'moment';

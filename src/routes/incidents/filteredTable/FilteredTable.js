@@ -1,15 +1,8 @@
-import React, {useState, useEffect, useRef} from 'react';
-import MaterialTable from 'material-table';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import {Container} from 'react-bootstrap';
-import {useStyles} from './Styles';
-import {columns, options, localization} from './data';
-import {HoodFilter} from './filter/hoodFilter/HoodFilter';
-import {CategoryFilter} from './filter/categoryFilter/CategoryFilter';
-import './Styles.css';
+import {useEffect, useRef, useState} from 'react';
+import {Table} from './table/Table';
+import React from 'react';
 
-const Table = (props) => {
-  const classes = useStyles();
+export const FilteredTable = (props) => {
   const [filteredData, setFiltered] = useState(null);
   const [hoodFilters, setHoodFilters] = useState([]);
   const [categoryFilters, setCategoryFilters] = useState([]);
@@ -54,31 +47,11 @@ const Table = (props) => {
   }, [hoodFilters, categoryFilters, props.data]);
 
   return (
-    <div>
-      {!props.data ? (
-        <CircularProgress className={classes.centered} />
-      ) : (
-        <Container>
-          <Container className="hood-filter">
-            <HoodFilter handleChange={handleHoodFilterChange} />
-          </Container>
-          <Container className="category-filter">
-            <CategoryFilter handleChange={handleCategoryFilterChange} />
-          </Container>
-
-          <Container className="table">
-            <MaterialTable
-              title=""
-              data={!filteredData ? props.data : filteredData}
-              columns={columns}
-              options={options}
-              localization={localization}
-            />
-          </Container>
-        </Container>
-      )}
-    </div>
+    <Table
+      data={props.data}
+      filteredData={filteredData}
+      handleHoodFilterChange={handleHoodFilterChange}
+      handleCategoryFilterChange={handleCategoryFilterChange}
+    />
   );
 };
-
-export {Table};
