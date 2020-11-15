@@ -17,7 +17,10 @@ export const Table = (props) => {
       ) : (
         <Container>
           <Container className="hood-filter">
-            <HoodFilter handleChange={props.handleHoodFilterChange} />
+            <HoodFilter
+              data={props.data}
+              handleChange={props.handleHoodFilterChange}
+            />
           </Container>
           <Container className="category-filter">
             <CategoryFilter handleChange={props.handleCategoryFilterChange} />
