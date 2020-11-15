@@ -35,6 +35,7 @@ export const Filter = (props) => {
       placeholder={props.placeholder}
       closeMenuOnSelect={false}
       hideSelectedOptions={true}
+      noOptionsMessage={() => 'No hay más filtros'}
       onChange={props.handleChange}
       components={{
         ValueContainer,
