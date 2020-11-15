@@ -7,24 +7,6 @@ export const FilteredTable = (props) => {
   const [hoodFilters, setHoodFilters] = useState([]);
   const [categoryFilters, setCategoryFilters] = useState([]);
 
-  const filterData = (hoodFilter, categoryFilter, data) => {
-    const hoods = hoodFilter.map((filter) => filter.label);
-    const categories = categoryFilter.map((filter) => filter.label);
-
-    return data.filter((incident) => {
-      if (hoodFilters.length > 0 && categoryFilters.length > 0) {
-        return (
-          hoods.includes(incident.hood) &&
-          categories.includes(incident.category.name)
-        );
-      }
-      if (hoodFilters.length > 0) {
-        return hoods.includes(incident.hood);
-      }
-      return categories.includes(incident.category.name);
-    });
-  };
-
   const handleHoodFilterChange = (newVal) => {
     setHoodFilters(newVal);
   };
@@ -35,6 +17,23 @@ export const FilteredTable = (props) => {
 
   const isFirstRun = useRef(true);
   useEffect(() => {
+    const filterData = (hoodFilter, categoryFilter, data) => {
+      const hoods = hoodFilter.map((filter) => filter.label);
+      const categories = categoryFilter.map((filter) => filter.label);
+
+      return data.filter((incident) => {
+        if (hoodFilters.length > 0 && categoryFilters.length > 0) {
+          return (
+            hoods.includes(incident.hood) &&
+            categories.includes(incident.category.name)
+          );
+        }
+        if (hoodFilters.length > 0) {
+          return hoods.includes(incident.hood);
+        }
+        return categories.includes(incident.category.name);
+      });
+    };
     (async () => {
       if (isFirstRun.current) {
         isFirstRun.current = false;
