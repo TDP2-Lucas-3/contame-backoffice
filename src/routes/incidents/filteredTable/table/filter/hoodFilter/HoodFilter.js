@@ -1,5 +1,4 @@
 import {Filter} from '../Filter';
-import {hoods} from './data';
 import React from 'react';
 
 export const HoodFilter = (props) => {
