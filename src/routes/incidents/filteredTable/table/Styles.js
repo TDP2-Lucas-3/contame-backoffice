@@ -7,10 +7,4 @@ export const useStyles = makeStyles({
     top: '45%',
     color: '#1F271B',
   },
-  table: {
-    position: 'relative',
-    left: '117px',
-    top: '90px',
-    width: 1120,
-  },
 });

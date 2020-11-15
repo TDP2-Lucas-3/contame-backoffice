@@ -45,8 +45,8 @@ export const columns = [
 export const options = {
   selection: false,
   headerStyle: {
-    backgroundColor: '#F4D35E',
-    color: '#1F271B',
+    backgroundColor: '#1F271B',
+    color: 'white',
     fontSize: '11pt',
     fontWeight: 'bold',
   },

@@ -24,6 +24,12 @@ export class Resources {
     const response = await this.client.get(url);
     return response.data;
   }
+
+  async categories() {
+    const url = `${BACKEND_URL}incident/categories/`;
+    const response = await this.client.get(url);
+    return response.data;
+  }
 }
 
 export const useGetResource = (fetchResource) => {
