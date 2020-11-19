@@ -6,14 +6,17 @@ import {Provider} from 'react-redux';
 import {Router} from 'react-router-dom';
 import {ContameRouter} from './routing/ContameRouter';
 import {createBrowserHistory} from 'history';
-import store from './redux/store';
+import {store, persistor} from './redux/store';
+import {PersistGate} from 'redux-persist/integration/react';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router history={createBrowserHistory()}>
-        <ContameRouter />
-      </Router>
+      <PersistGate loading={null} persistor={persistor}>
+        <Router history={createBrowserHistory()}>
+          <ContameRouter />
+        </Router>
+      </PersistGate>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
