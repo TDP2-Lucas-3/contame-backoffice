@@ -6,10 +6,17 @@
     box-sizing: content-box;
 }
 
-.content-column {
+.public-content-column {
     height: 100%;
     width: 90%;
     box-sizing: content-box;
+}
+
+.private-content-column {
+    height: 100%;
+    width: 90%;
+    box-sizing: content-box;
+    background-color: #fcb43d;
 }
 
 .incident-comment-container {

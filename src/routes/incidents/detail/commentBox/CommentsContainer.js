@@ -19,6 +19,7 @@ export const CommentsContainer = (props) => {
               date={Moment(comment.date).format('DD/MM/YYYY')}
               comment={comment.comment}
               image={comment.user.profile.photo}
+              type={comment.category}
             />
           );
         })}

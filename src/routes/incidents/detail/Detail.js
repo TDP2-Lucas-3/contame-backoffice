@@ -17,7 +17,7 @@ export const Detail = (props) => {
   return (
     <div className="box">
       <label className="header-text">Detalle de incidencia</label>
-      {!props.data ? (
+      {!props.data || !props.comments ? (
         <CircularProgress className={classes.centered} />
       ) : (
         <Container>
@@ -49,7 +49,7 @@ export const Detail = (props) => {
               header={'Cierre'}
             />
           </div>
-          <CommentsContainer comments={props.comments}/>
+          <CommentsContainer comments={props.comments} />
         </Container>
       )}
     </div>

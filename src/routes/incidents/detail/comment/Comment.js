@@ -10,14 +10,27 @@ export const Comment = (props) => {
       <Col className="picture-column">
         <ProfilePicture image={props.image} />
       </Col>
-      <Col className="content-column">
-        <CommentContent
-          name={props.name}
-          secondName={props.secondName}
-          date={props.date}
-          comment={props.comment}
-        />
-      </Col>
+      <>
+        {props.type === 'PUBLIC' ? (
+          <Col className="public-content-column">
+            <CommentContent
+              name={props.name}
+              secondName={props.secondName}
+              date={props.date}
+              comment={props.comment}
+            />
+          </Col>
+        ) : (
+          <Col className="private-content-column">
+            <CommentContent
+              name={props.name}
+              secondName={props.secondName}
+              date={props.date}
+              comment={props.comment}
+            />
+          </Col>
+        )}
+      </>
     </Row>
   );
 };
