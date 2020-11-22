@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+.comment-box {
+    border-radius: 8px;
+    width: 39%;
+    height: 44.5%;
+    border: 1px solid #d2d2d2;
+    top:55%;
+    left:59%;
+    bottom:0.5%;
+    position: absolute;
+    background-color: #fcfcfc;
+    box-shadow: 0px 1px 8px #A0A0A0;
+    overflow-y: auto;
+}
+
+.comment-box-title {
+    color: #000000;
+    font-weight: bold;
+    padding: 0 0 0% 40%;
+    height: 10%;
+    width:100%;
+    font-family: Noto Sans CJK JP;
+}
+
+.comments-box{
+    font-weight: bold;
+    height: 88%;
+    width:100%;
+    font-family: Noto Sans CJK JP;
+}
+
+

@@ -25,6 +25,12 @@ export class Resources {
     return response.data;
   }
 
+  async comments(id) {
+    const url = `${BACKEND_URL}incident/${id}/comment`;
+    const response = await this.client.get(url);
+    return response.data;
+  }
+
   async categories() {
     const url = `${BACKEND_URL}incident/categories/`;
     const response = await this.client.get(url);

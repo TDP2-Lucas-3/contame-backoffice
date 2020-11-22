@@ -10,6 +10,7 @@ import Moment from 'moment';
 import {IncidentCarousel} from './carousel/Carousel';
 import {Map} from './map/MapWrapper';
 import {ReportedLabel} from './stateLabel/reported/ReportedLabel';
+import {CommentsContainer} from './commentBox/CommentsContainer';
 
 export const Detail = (props) => {
   const classes = useStyles();
@@ -48,6 +49,7 @@ export const Detail = (props) => {
               header={'Cierre'}
             />
           </div>
+          <CommentsContainer comments={props.comments}/>
         </Container>
       )}
     </div>
