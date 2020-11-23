@@ -8,7 +8,11 @@ export const ReportedLabel = (props) => {
     <IconContext.Provider value={{className: 'report-icon'}}>
       <div className="reported-label-box">
         <GoReport />
-        <label className="reported-label-content">{props.state}</label>
+        <label
+          className="reported-label-content"
+          onClick={() => props.setModalVisible(!props.modalVisible)}>
+          {props.state}
+        </label>
       </div>
     </IconContext.Provider>
   );

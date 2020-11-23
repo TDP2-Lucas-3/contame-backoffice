@@ -1,5 +1,5 @@
 import './Styles.css';
-import React from 'react';
+import React, {useState} from 'react';
 import Container from '@material-ui/core/Container';
 import '../filteredTable/table/Styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -14,6 +14,7 @@ import {ChangeStateModal} from './changeStateModal/ChangeStateModal';
 
 export const Detail = (props) => {
   const classes = useStyles();
+  const [modalVisible, setModalVisible] = useState(false);
   return (
     <div className="box">
       <label className="header-text">Detalle de incidencia</label>
@@ -22,7 +23,11 @@ export const Detail = (props) => {
       ) : (
         <Container>
           <h1 className="incident-title">{props.data.title}</h1>
-          <StateLabel state={props.data.state} />
+          <StateLabel
+            state={props.data.state}
+            modalVisible={modalVisible}
+            setModalVisible={setModalVisible}
+          />
           <div className="map">
             <Map
               lat={parseFloat(props.data.lat)}
@@ -49,7 +54,7 @@ export const Detail = (props) => {
               header={'Cierre'}
             />
           </div>
-          <ChangeStateModal state={'REPORTADO'} />
+          {modalVisible ? <ChangeStateModal state={props.data.state} /> : null}
         </Container>
       )}
     </div>
