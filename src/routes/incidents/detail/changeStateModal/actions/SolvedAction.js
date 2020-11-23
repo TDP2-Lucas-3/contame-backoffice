@@ -1,15 +1,17 @@
 import React from 'react';
 import {IconContext} from 'react-icons';
 import {GoCheck} from 'react-icons/go';
-import './Styles.css';
 
 export const SolvedAction = () => {
   return (
     <IconContext.Provider value={{className: 'solved-action-icon'}}>
-      <div className="solved-action">
+      <button
+        type="button"
+        className="solved-action"
+        onClick={() => console.log('RESUELTO')}>
         <GoCheck />
-        <label className="solved-action-content">Marcar como resuelto</label>
-      </div>
+        Marcar como resuelto
+      </button>
     </IconContext.Provider>
   );
 };

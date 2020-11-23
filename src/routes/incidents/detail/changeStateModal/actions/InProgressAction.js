@@ -6,10 +6,13 @@ import './Styles.css';
 export const InProgressAction = () => {
   return (
     <IconContext.Provider value={{className: 'progress-action-icon'}}>
-      <div className="progress-action">
+      <button
+        type="button"
+        className="progress-action"
+        onClick={() => console.log('EN PROGRESO')}>
         <FaHammer />
-        <label className="progress-action-content">Marcar en progreso</label>
-      </div>
+        Marcar en progreso
+      </button>
     </IconContext.Provider>
   );
 };

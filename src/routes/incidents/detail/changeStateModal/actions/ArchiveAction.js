@@ -6,10 +6,13 @@ import './Styles.css';
 export const ArchiveAction = () => {
   return (
     <IconContext.Provider value={{className: 'archive-action-icon'}}>
-      <div className="archive-action">
+      <button
+        type="button"
+        className="archive-action"
+        onClick={() => console.log('ARCHIVADO')}>
         <FaFileArchive />
-        <label className="archive-action-content">Archivar</label>
-      </div>
+        Archivar
+      </button>
     </IconContext.Provider>
   );
 };

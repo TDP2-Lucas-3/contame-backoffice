@@ -3,30 +3,33 @@
     margin-right: 10%;
 }
 
-.archive-action{
+.archive-action {
     display:flex;
     background-color: #fd0724;
     border-radius: 10px;
     box-shadow: 0px 1px 4px #A0A0A0;
-    color: #A0A0A0;
+    color: white;
     font-family: "Lato", sans-serif;
     font-weight: bold;
-    font-size: 12pt;
+    font-size: 10pt;
     width: 50%;
     height: 60%;
-    padding: 2% 0 0 10%;
-    margin-right:2%;
+    margin-right:0%;
+    margin-left: 0%;
+    padding: 2% 0 0 9%;
+    border:transparent;
+    outline:0;
 }
 
-.archive-action-content {
-    color: white;
-    display: flex;
-    font-family: "Lato", sans-serif;
-    font-size: 10pt;
-    font-weight: bold;
-    width: 100%;
+.archive-action:hover {
+    outline:0;
+    background-color: #ff6b7c;
 }
 
+.archive-action:active {
+    outline:0;
+    background-color: #cc0017;
+}
 
 .progress-action-icon {
     color: white;
@@ -39,28 +42,34 @@
     background-color: #459dff;
     border-radius: 10px;
     box-shadow: 0px 1px 4px #A0A0A0;
-    color: #A0A0A0;
+    color: white;
     font-family: "Lato", sans-serif;
     font-weight: bold;
-    font-size: 13pt;
-    width: 50%;
+    font-size: 10pt;
+    width: 60%;
     height: 60%;
-    padding: 2% 0 0 3%;
     margin-right:10%;
+    margin-left: 1%;
+    padding: 2% 0 0 4%;
+    border:transparent;
+    outline:0;
 }
 
-.progress-action-content {
-    color: white;
-    display: flex;
-    font-family: "Lato", sans-serif;
-    font-size: 10pt;
-    font-weight: bold;
-    width: 100%;
+.progress-action:hover {
+    outline:0;
+    background-color: #62a9f8;
 }
+
+.progress-action:active {
+    outline:0;
+    background-color: #1582fc;
+}
+
 
 .solved-action-icon {
     color: white;
-    margin-right: 8%;
+    margin-right: 3%;
+    margin-top: 1%;
 }
 
 .solved-action{
@@ -68,22 +77,25 @@
     background-color: #37c117;
     border-radius: 10px;
     box-shadow: 0px 1px 4px #A0A0A0;
-    color: #A0A0A0;
+    color: white;
     font-family: "Lato", sans-serif;
     font-weight: bold;
     font-size: 13pt;
     width: 60%;
     height: 60%;
-    padding: 2.5% 0 0 5%;
     margin-right:10%;
     margin-left: 10%;
+    padding: 1% 0 0 2%;
+    border:transparent;
+    outline:0;
 }
 
-.solved-action-content {
-    color: white;
-    display: flex;
-    font-family: "Lato", sans-serif;
-    font-size: 10pt;
-    font-weight: bold;
-    width: 100%;
+.solved-action:hover {
+    outline:0;
+    background-color: #2dd008;
+}
+
+.solved-action:active {
+    outline:0;
+    background-color: #1f9703;
 }
