@@ -10,6 +10,7 @@ import Moment from 'moment';
 import {IncidentCarousel} from './carousel/Carousel';
 import {Map} from './map/MapWrapper';
 import {StateLabel} from './stateLabel/StateLabel';
+import {ChangeStateModal} from './changeStateModal/ChangeStateModal';
 
 export const Detail = (props) => {
   const classes = useStyles();
@@ -48,6 +49,7 @@ export const Detail = (props) => {
               header={'Cierre'}
             />
           </div>
+          <ChangeStateModal state={'REPORTADO'} />
         </Container>
       )}
     </div>

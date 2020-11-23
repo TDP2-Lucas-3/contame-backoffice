@@ -1,0 +1,19 @@
+.comment-input {
+    border-radius: 10px;
+    width: 90%;
+    height:100%;
+    color: black;
+    font-size: 9pt;
+    margin-left: 5%;
+    font-weight: lighter;
+    padding: 3% 0 0 2%;
+    justify-content: left;
+    background-color: #e0e2d9;
+    font-family: 'Lato', sans-serif;
+    border:none;
+    resize:none;
+}
+
+.comment-input:focus {
+    outline-width: 0;
+}
