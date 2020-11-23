@@ -9,6 +9,10 @@ export class HttpClient {
     return await this.request(url, 'GET');
   }
 
+  async post(url, body) {
+    return await this.request(url, 'POST', body);
+  }
+
   async request(url, method, data, headers) {
     headers = headers || {};
     headers = {...headers, Authorization: `Bearer ${this.token}`};

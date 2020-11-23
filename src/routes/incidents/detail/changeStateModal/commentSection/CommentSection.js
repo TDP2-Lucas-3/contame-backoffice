@@ -1,7 +1,7 @@
 import React from 'react';
 import './CommentSection.css';
 
-export const CommentSection = () => {
+export const CommentSection = (props) => {
   return (
     <textarea
       type="text"
@@ -9,6 +9,7 @@ export const CommentSection = () => {
       name="comment-input"
       className="comment-input"
       placeholder="Agregar un comentario"
+      onChange={(e) => props.setCommentText(e.target.value)}
     />
   );
 };

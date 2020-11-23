@@ -15,6 +15,7 @@ import {ChangeStateModal} from './changeStateModal/ChangeStateModal';
 export const Detail = (props) => {
   const classes = useStyles();
   const [modalVisible, setModalVisible] = useState(false);
+
   return (
     <div className="box">
       <label className="header-text">Detalle de incidencia</label>
@@ -54,7 +55,7 @@ export const Detail = (props) => {
               header={'Cierre'}
             />
           </div>
-          {modalVisible ? <ChangeStateModal state={props.data.state} /> : null}
+          {modalVisible ? <ChangeStateModal data={props.data} /> : null}
         </Container>
       )}
     </div>

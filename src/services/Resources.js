@@ -30,6 +30,15 @@ export class Resources {
     const response = await this.client.get(url);
     return response.data;
   }
+
+  async newState(id, state, comment) {
+    const url = `${BACKEND_URL}incident/${id}/state/`;
+    const response = await this.client.post(url, {
+      state,
+      comment,
+    });
+    return response.data;
+  }
 }
 
 export const useGetResource = (fetchResource) => {

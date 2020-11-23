@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Form, FormGroup} from 'reactstrap';
 import {CommentSection} from './commentSection/CommentSection';
 import './ChangeStateModal.css';
@@ -8,9 +8,12 @@ import {InProgressAction} from './actions/InProgressAction';
 
 export const ChangeStateModal = (props) => {
   let newStates = [];
-  switch (props.state) {
+  const [commentText, setCommentText] = useState('');
+  switch (props.data.state) {
     case 'REPORTADO':
-      newStates.push(<ArchiveAction />);
+      newStates.push(
+        <ArchiveAction id={props.data.id} comment={commentText} />,
+      );
       newStates.push(<InProgressAction />);
       break;
     case 'EN PROGRESO':
@@ -25,7 +28,7 @@ export const ChangeStateModal = (props) => {
         {newStates.map((action) => action)}
       </FormGroup>
       <FormGroup className="comment-section-container">
-        <CommentSection />
+        <CommentSection setCommentText={setCommentText} />
       </FormGroup>
     </Form>
   );
