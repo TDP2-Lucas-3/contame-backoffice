@@ -15,6 +15,9 @@ import {ChangeStateModal} from './changeStateModal/ChangeStateModal';
 export const Detail = (props) => {
   const classes = useStyles();
   const [modalVisible, setModalVisible] = useState(false);
+  const flipModal = () => {
+    setModalVisible(!modalVisible);
+  };
 
   return (
     <div className="box">
@@ -24,11 +27,7 @@ export const Detail = (props) => {
       ) : (
         <Container>
           <h1 className="incident-title">{props.data.title}</h1>
-          <StateLabel
-            state={props.data.state}
-            modalVisible={modalVisible}
-            setModalVisible={setModalVisible}
-          />
+          <StateLabel state={props.data.state} flipModal={flipModal} />
           <div className="map">
             <Map
               lat={parseFloat(props.data.lat)}
