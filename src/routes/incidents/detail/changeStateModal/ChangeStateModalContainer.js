@@ -11,38 +11,27 @@ const getKeyFromValue = (array, value) => {
 };
 
 export const ChangeStateModalContainer = (props) => {
-  const {
-    modalVisible,
-    closeDialog,
-    initialPrivateState,
-    initialPublicState,
-  } = props;
+  const {modalVisible, closeDialog, initialPublicState} = props;
   const resources = useSelector((state) => state.auth.resources);
 
   const publicStates = useGetResource(() => resources.publicStates());
-  const privateStates = useGetResource(() => resources.privateStates());
   const [publicState, setPublicState] = useState(null);
-  const [privateState, setPrivateState] = useState(null);
 
   useEffect(() => {
-    if (publicStates === null || privateStates === null) {
+    if (publicStates === null) {
       return;
     }
     const s = getKeyFromValue(publicStates, initialPublicState);
-    const p = getKeyFromValue(privateStates, initialPrivateState);
     setPublicState(s);
-    setPrivateState(p);
-  }, [privateStates, publicStates, initialPrivateState, initialPublicState]);
+  }, [publicStates, initialPublicState]);
+  
   return (
     <ChangeStateModal
       modalVisible={modalVisible}
       close={closeDialog}
-      publicStates={publicStates}
-      privateStates={privateStates}
-      publicState={publicState}
-      privateState={privateState}
-      setPublicState={setPublicState}
-      setPrivateState={setPrivateState}
+      states={publicStates}
+      state={publicState}
+      setState={setPublicState}
     />
   );
 };

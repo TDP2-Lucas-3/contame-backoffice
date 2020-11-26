@@ -11,16 +11,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import TextField from '@material-ui/core/TextField';
 
 export const ChangeStateModal = (props) => {
-  const {
-    modalVisible,
-    close,
-    publicState,
-    privateState,
-    publicStates,
-    privateStates,
-    setPublicState,
-    setPrivateState,
-  } = props;
+  const {modalVisible, close, state, states, setState} = props;
   return (
     <div>
       <Dialog
@@ -30,33 +21,16 @@ export const ChangeStateModal = (props) => {
         <DialogTitle id="form-dialog-title">Cambiar Estado</DialogTitle>
         <DialogContent classes={{padding: 10}}>
           <FormControl style={{paddingLeft: 10, paddingRight: 10}}>
-            <InputLabel id={'private-state-label'}>Estado privado</InputLabel>
-            <Select
-              autoFocus
-              value={privateState}
-              onChange={(e) => setPrivateState(e.target.value)}
-              style={{width: 200}}
-              labelId={'private-state-label'}
-              id="private-state">
-              {privateStates &&
-                privateStates.map((privateState) => (
-                  <MenuItem key={privateState.key} value={privateState.key}>
-                    {privateState.value}
-                  </MenuItem>
-                ))}
-            </Select>
-          </FormControl>
-          <FormControl style={{paddingLeft: 10, paddingRight: 10}}>
             <InputLabel id={'public-state-label'}>Estado público</InputLabel>
             <Select
               autoFocus
-              value={publicState}
+              value={state}
               labelId={'public-state-label'}
               id="public-state"
-              onChange={(e) => setPublicState(e.target.value)}
+              onChange={(e) => setState(e.target.value)}
               style={{width: 200}}>
-              {publicStates &&
-                publicStates.map((publicState) => (
+              {states &&
+                states.map((publicState) => (
                   <MenuItem key={publicState.key} value={publicState.key}>
                     {publicState.value}
                   </MenuItem>
@@ -66,7 +40,7 @@ export const ChangeStateModal = (props) => {
           <FormControl>
             <TextField
               multiline
-              style={{margin: 10, width: 500, height: 150}}
+              style={{margin: 10, width: 400, height: 130}}
               rows={4}
               variant="outlined"
               placeholder={'Comentario interno'}
