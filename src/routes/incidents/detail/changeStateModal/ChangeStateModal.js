@@ -11,7 +11,16 @@ import InputLabel from '@material-ui/core/InputLabel';
 import TextField from '@material-ui/core/TextField';
 
 export const ChangeStateModal = (props) => {
-  const {modalVisible, close, state, states, setState} = props;
+  const {
+    modalVisible,
+    close,
+    state,
+    states,
+    setState,
+    comment,
+    setComment,
+    submit,
+  } = props;
   return (
     <div>
       <Dialog
@@ -43,12 +52,14 @@ export const ChangeStateModal = (props) => {
               style={{margin: 10, width: 400, height: 130}}
               rows={4}
               variant="outlined"
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
               placeholder={'Comentario interno'}
             />
           </FormControl>
         </DialogContent>
         <DialogActions>
-          <Button onClick={close} color="primary">
+          <Button onClick={submit} color="primary">
             Confirmar
           </Button>
           <Button onClick={close} color="primary">

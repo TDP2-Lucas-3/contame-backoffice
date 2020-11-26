@@ -65,6 +65,7 @@ export const Detail = (props) => {
           <ChangeStateModalContainer
             modalVisible={modalVisible}
             closeDialog={closeDialog}
+            id={props.data.id}
             initialPublicState={props.data.state}
             initialPrivateState={props.data.statePrivate}
           />

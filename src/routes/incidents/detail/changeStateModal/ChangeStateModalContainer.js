@@ -11,12 +11,12 @@ const getKeyFromValue = (array, value) => {
 };
 
 export const ChangeStateModalContainer = (props) => {
-  const {modalVisible, closeDialog, initialPublicState} = props;
+  const {modalVisible, closeDialog, initialPublicState, id} = props;
   const resources = useSelector((state) => state.auth.resources);
 
   const publicStates = useGetResource(() => resources.publicStates());
   const [publicState, setPublicState] = useState(null);
-
+  const [comment, setComment] = useState(null);
   useEffect(() => {
     if (publicStates === null) {
       return;
@@ -24,7 +24,12 @@ export const ChangeStateModalContainer = (props) => {
     const s = getKeyFromValue(publicStates, initialPublicState);
     setPublicState(s);
   }, [publicStates, initialPublicState]);
-  
+
+  const submit = async () => {
+    await resources.newState(id, publicState, comment);
+    closeDialog();
+  };
+
   return (
     <ChangeStateModal
       modalVisible={modalVisible}
@@ -32,6 +37,9 @@ export const ChangeStateModalContainer = (props) => {
       states={publicStates}
       state={publicState}
       setState={setPublicState}
+      comment={comment}
+      setComment={setComment}
+      submit={submit}
     />
   );
 };
