@@ -19,6 +19,10 @@ export const Detail = (props) => {
     setModalVisible(!modalVisible);
   };
 
+  const closeDialog = () => {
+    setModalVisible(false);
+  };
+
   return (
     <div className="box">
       <label className="header-text">Detalle de incidencia</label>
@@ -54,7 +58,11 @@ export const Detail = (props) => {
               header={'Cierre'}
             />
           </div>
-          {modalVisible ? <ChangeStateModal data={props.data} /> : null}
+          <ChangeStateModal
+            modalVisible={modalVisible}
+            data={props.data}
+            close={closeDialog}
+          />
         </Container>
       )}
     </div>
