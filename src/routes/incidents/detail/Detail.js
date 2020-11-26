@@ -31,7 +31,11 @@ export const Detail = (props) => {
       ) : (
         <Container>
           <h1 className="incident-title">{props.data.title}</h1>
-          <StateLabel state={props.data.state} flipModal={flipModal} />
+          <StateLabel
+            statePrivate={props.data.statePrivate}
+            state={props.data.state}
+            flipModal={flipModal}
+          />
           <div className="map">
             <Map
               lat={parseFloat(props.data.lat)}

@@ -7,10 +7,22 @@ export const StateLabel = (props) => {
   return (
     <IconContext.Provider value={{className: 'report-icon'}}>
       <div className="reported-label-box" onClick={props.flipModal}>
-        <GoReport />
-        <label className="reported-label-content" onClick={props.flipModal}>
-          Cambiar Estado
-        </label>
+        <p>Estado Público</p>
+        <div className="reported-label-content">
+          <label className="reported-label-text" onClick={props.flipModal}>
+            {props.state}
+          </label>
+        </div>
+      </div>
+      <div
+        className="reported-label-box box-private-position"
+        onClick={props.flipModal}>
+        <p>Estado Privado</p>
+        <div className="reported-label-content">
+          <label className="reported-label-text" onClick={props.flipModal}>
+            {props.statePrivate}
+          </label>
+        </div>
       </div>
     </IconContext.Provider>
   );
