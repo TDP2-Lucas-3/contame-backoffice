@@ -26,7 +26,7 @@ export class Resources {
   }
 
   async categories() {
-    const url = `${BACKEND_URL}incident/categories/`;
+    const url = `${BACKEND_URL}incident/category/`;
     const response = await this.client.get(url);
     return response.data;
   }
