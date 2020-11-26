@@ -7,8 +7,8 @@ export const columns = [
     render: (row) => renderTitle(row),
   },
   {
-    title: 'Categoria',
-    field: 'category.name',
+    title: 'Tipo',
+    field: 'subcategory',
   },
   {
     title: 'Fecha reporte',
