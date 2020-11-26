@@ -39,7 +39,7 @@ export const ChangeStateModal = (props) => {
               labelId={'public-state-label'}
               id="public-state"
               onChange={(e) => setState(e.target.value)}
-              style={{width: 200}}>
+              style={{width: 400}}>
               {states &&
                 states.map((publicState) => (
                   <MenuItem key={publicState.key} value={publicState.key}>

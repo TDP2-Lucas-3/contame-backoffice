@@ -72,6 +72,17 @@ export const Detail = (props) => {
             title={'Modificar estado público'}
             label={'Estado público'}
           />
+
+          <ChangeStateModalContainer
+            modalVisible={modalVisible}
+            closeDialog={closeDialog}
+            id={props.data.id}
+            initialPublicState={props.data.statePrivate}
+            endpoint={'newStatePrivate'}
+            fetchStatesMethod={'privateStates'}
+            title={'Modificar estado interno'}
+            label={'Estado interno'}
+          />
         </Container>
       )}
     </div>
