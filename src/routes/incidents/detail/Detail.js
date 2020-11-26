@@ -62,6 +62,8 @@ export const Detail = (props) => {
             modalVisible={modalVisible}
             data={props.data}
             close={closeDialog}
+            publicStates={props.publicStates}
+            privateStates={props.privateStates}
           />
         </Container>
       )}

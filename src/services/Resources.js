@@ -31,6 +31,18 @@ export class Resources {
     return response.data;
   }
 
+  async publicStates() {
+    const url = `${BACKEND_URL}incident/state/`;
+    const response = await this.client.get(url);
+    return response.data;
+  }
+
+  async privateStates() {
+    const url = `${BACKEND_URL}incident/state/private/`;
+    const response = await this.client.get(url);
+    return response.data;
+  }
+
   async newState(id, state, comment) {
     const url = `${BACKEND_URL}incident/${id}/state/`;
     const response = await this.client.post(url, {

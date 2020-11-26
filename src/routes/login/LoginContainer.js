@@ -22,6 +22,7 @@ export const LoginContainer = () => {
 
     try {
       setLoading(true);
+      setAuth(true);
       response = await signIn(email, password);
     } catch {
       setLoading(false);

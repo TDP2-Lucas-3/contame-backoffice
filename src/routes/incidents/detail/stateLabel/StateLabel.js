@@ -6,10 +6,10 @@ import {GoReport} from 'react-icons/all';
 export const StateLabel = (props) => {
   return (
     <IconContext.Provider value={{className: 'report-icon'}}>
-      <div className="reported-label-box">
+      <div className="reported-label-box" onClick={props.flipModal}>
         <GoReport />
         <label className="reported-label-content" onClick={props.flipModal}>
-          {props.state}
+          Cambiar Estado
         </label>
       </div>
     </IconContext.Provider>
