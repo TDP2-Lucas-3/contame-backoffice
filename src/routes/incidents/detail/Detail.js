@@ -67,7 +67,8 @@ export const Detail = (props) => {
             closeDialog={closeDialog}
             id={props.data.id}
             initialPublicState={props.data.state}
-            initialPrivateState={props.data.statePrivate}
+            endpoint={'newState'}
+            fetchStatesMethod={'publicStates'}
           />
         </Container>
       )}

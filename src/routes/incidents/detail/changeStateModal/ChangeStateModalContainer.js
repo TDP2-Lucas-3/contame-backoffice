@@ -11,22 +11,29 @@ const getKeyFromValue = (array, value) => {
 };
 
 export const ChangeStateModalContainer = (props) => {
-  const {modalVisible, closeDialog, initialPublicState, id} = props;
+  const {
+    modalVisible,
+    closeDialog,
+    initialPublicState,
+    id,
+    endpoint,
+    fetchStatesMethod,
+  } = props;
   const resources = useSelector((state) => state.auth.resources);
 
-  const publicStates = useGetResource(() => resources.publicStates());
-  const [publicState, setPublicState] = useState(null);
+  const states = useGetResource(() => resources[fetchStatesMethod]());
+  const [state, setState] = useState(null);
   const [comment, setComment] = useState(null);
   useEffect(() => {
-    if (publicStates === null) {
+    if (states === null) {
       return;
     }
-    const s = getKeyFromValue(publicStates, initialPublicState);
-    setPublicState(s);
-  }, [publicStates, initialPublicState]);
+    const s = getKeyFromValue(states, initialPublicState);
+    setState(s);
+  }, [states, initialPublicState]);
 
   const submit = async () => {
-    await resources.newState(id, publicState, comment);
+    await resources[endpoint](id, state, comment);
     closeDialog();
   };
 
@@ -34,9 +41,9 @@ export const ChangeStateModalContainer = (props) => {
     <ChangeStateModal
       modalVisible={modalVisible}
       close={closeDialog}
-      states={publicStates}
-      state={publicState}
-      setState={setPublicState}
+      states={states}
+      state={state}
+      setState={setState}
       comment={comment}
       setComment={setComment}
       submit={submit}
