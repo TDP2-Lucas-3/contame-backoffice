@@ -13,15 +13,7 @@ function Incidents() {
 export const IncidentDetail = ({match}) => {
   const resources = useSelector((state) => state.auth.resources);
   const incident = useGetResource(() => resources.incident(match.params.id));
-  const publicStates = useGetResource(() => resources.publicStates());
-  const privateStates = useGetResource(() => resources.privateStates());
-  return (
-    <Detail
-      data={incident}
-      publicStates={publicStates}
-      privateStates={privateStates}
-    />
-  );
+  return <Detail data={incident} />;
 };
 
 export {Incidents};

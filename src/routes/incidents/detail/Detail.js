@@ -10,7 +10,7 @@ import Moment from 'moment';
 import {IncidentCarousel} from './carousel/Carousel';
 import {Map} from './map/MapWrapper';
 import {StateLabel} from './stateLabel/StateLabel';
-import {ChangeStateModal} from './changeStateModal/ChangeStateModal';
+import {ChangeStateModalContainer} from './changeStateModal/ChangeStateModalContainer';
 
 export const Detail = (props) => {
   const classes = useStyles();
@@ -58,12 +58,11 @@ export const Detail = (props) => {
               header={'Cierre'}
             />
           </div>
-          <ChangeStateModal
+          <ChangeStateModalContainer
             modalVisible={modalVisible}
-            data={props.data}
-            close={closeDialog}
-            publicStates={props.publicStates}
-            privateStates={props.privateStates}
+            closeDialog={closeDialog}
+            initialPublicState={props.data.state}
+            initialPrivateState={props.data.statePrivate}
           />
         </Container>
       )}

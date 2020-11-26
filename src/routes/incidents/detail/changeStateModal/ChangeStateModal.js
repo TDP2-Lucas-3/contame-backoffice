@@ -11,7 +11,16 @@ import InputLabel from '@material-ui/core/InputLabel';
 import TextField from '@material-ui/core/TextField';
 
 export const ChangeStateModal = (props) => {
-  const {modalVisible, close} = props;
+  const {
+    modalVisible,
+    close,
+    publicState,
+    privateState,
+    publicStates,
+    privateStates,
+    setPublicState,
+    setPrivateState,
+  } = props;
   return (
     <div>
       <Dialog
@@ -24,28 +33,34 @@ export const ChangeStateModal = (props) => {
             <InputLabel id={'private-state-label'}>Estado privado</InputLabel>
             <Select
               autoFocus
-              value={'xs'}
+              value={privateState}
+              onChange={(e) => setPrivateState(e.target.value)}
+              style={{width: 200}}
               labelId={'private-state-label'}
               id="private-state">
-              <MenuItem value="xs">Inspección</MenuItem>
-              <MenuItem value="sm">sm</MenuItem>
-              <MenuItem value="md">md</MenuItem>
-              <MenuItem value="lg">lg</MenuItem>
-              <MenuItem value="xl">xl</MenuItem>
+              {privateStates &&
+                privateStates.map((privateState) => (
+                  <MenuItem key={privateState.key} value={privateState.key}>
+                    {privateState.value}
+                  </MenuItem>
+                ))}
             </Select>
           </FormControl>
           <FormControl style={{paddingLeft: 10, paddingRight: 10}}>
             <InputLabel id={'public-state-label'}>Estado público</InputLabel>
             <Select
               autoFocus
-              value={'xs'}
+              value={publicState}
               labelId={'public-state-label'}
-              id="public-state">
-              <MenuItem value="xs">Ingresado</MenuItem>
-              <MenuItem value="sm">sm</MenuItem>
-              <MenuItem value="md">md</MenuItem>
-              <MenuItem value="lg">lg</MenuItem>
-              <MenuItem value="xl">xl</MenuItem>
+              id="public-state"
+              onChange={(e) => setPublicState(e.target.value)}
+              style={{width: 200}}>
+              {publicStates &&
+                publicStates.map((publicState) => (
+                  <MenuItem key={publicState.key} value={publicState.key}>
+                    {publicState.value}
+                  </MenuItem>
+                ))}
             </Select>
           </FormControl>
           <FormControl>
