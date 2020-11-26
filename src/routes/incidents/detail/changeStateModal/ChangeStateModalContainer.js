@@ -18,6 +18,8 @@ export const ChangeStateModalContainer = (props) => {
     id,
     endpoint,
     fetchStatesMethod,
+    title,
+    label,
   } = props;
   const resources = useSelector((state) => state.auth.resources);
 
@@ -47,6 +49,8 @@ export const ChangeStateModalContainer = (props) => {
       comment={comment}
       setComment={setComment}
       submit={submit}
+      title={title}
+      label={label}
     />
   );
 };

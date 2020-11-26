@@ -20,6 +20,8 @@ export const ChangeStateModal = (props) => {
     comment,
     setComment,
     submit,
+    title,
+    label,
   } = props;
   return (
     <div>
@@ -27,10 +29,10 @@ export const ChangeStateModal = (props) => {
         open={modalVisible}
         onClose={close}
         aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">Cambiar Estado</DialogTitle>
+        <DialogTitle id="form-dialog-title">{title}</DialogTitle>
         <DialogContent classes={{padding: 10}}>
           <FormControl style={{paddingLeft: 10, paddingRight: 10}}>
-            <InputLabel id={'public-state-label'}>Estado público</InputLabel>
+            <InputLabel id={'public-state-label'}>{label}</InputLabel>
             <Select
               autoFocus
               value={state}

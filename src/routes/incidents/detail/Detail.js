@@ -69,6 +69,8 @@ export const Detail = (props) => {
             initialPublicState={props.data.state}
             endpoint={'newState'}
             fetchStatesMethod={'publicStates'}
+            title={'Modificar estado público'}
+            label={'Estado público'}
           />
         </Container>
       )}
