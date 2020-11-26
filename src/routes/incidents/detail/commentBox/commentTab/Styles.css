@@ -1,0 +1,11 @@
+.comment-tab, .comment-tab:not(:active) {
+    margin-right: 10%;
+    border-right: 1px solid #ccc;
+    height:auto;
+}
+
+.comment-tab:active {
+    border: 1px solid #000000;
+    background-color: yellow;
+    z-index: 1;
+}
