@@ -15,7 +15,7 @@
     font-size: 9pt;
     height: 35px;
     justify-content: flex-start;
-    left: 1120px;
+    left: 1000px;
     position: absolute;
     top: 62px;
     width: 250px;
@@ -47,7 +47,7 @@
 }
 
 .box-private-position {
-    left: 850px;
+    left: 730px;
     background-color: #d2d2d2;
 }
 
