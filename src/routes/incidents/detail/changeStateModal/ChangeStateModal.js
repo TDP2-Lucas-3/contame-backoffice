@@ -26,6 +26,7 @@ export const ChangeStateModal = (props) => {
   return (
     <div>
       <Dialog
+        id={label}
         open={modalVisible}
         onClose={close}
         aria-labelledby="form-dialog-title">
