@@ -24,11 +24,12 @@ export const DetailContainer = (props) => {
   return (
     <div className="box">
       <label className="header-text">Detalle de incidencia</label>
-      {!props.data ? (
+      {!props.data || !props.comments ? (
         <CircularProgress className={classes.centered} />
       ) : (
         <Detail
           data={props.data}
+          comments={props.comments}
           openPrivateModal={openPrivateModal}
           openPublicModal={openPublicModal}
           closeDialog={closeDialog}

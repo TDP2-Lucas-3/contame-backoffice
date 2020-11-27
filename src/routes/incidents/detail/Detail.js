@@ -9,6 +9,7 @@ import {IncidentCarousel} from './carousel/Carousel';
 import {Map} from './map/MapWrapper';
 import {StateLabel} from './stateLabel/StateLabel';
 import {ChangeStateModalContainer} from './changeStateModal/ChangeStateModalContainer';
+import {CommentsContainer} from './commentBox/CommentsContainer';
 
 export const Detail = (props) => {
   const {
@@ -57,6 +58,7 @@ export const Detail = (props) => {
           header={'Cierre'}
         />
       </div>
+      <CommentsContainer comments={props.comments} />
       <ChangeStateModalContainer
         modalVisible={modalVisible}
         closeDialog={closeDialog}

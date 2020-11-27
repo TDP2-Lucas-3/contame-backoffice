@@ -1,0 +1,19 @@
+.comment-info-container {
+    display:flex;
+}
+
+.comment-owner-info {
+    font-size: 9pt;
+    padding: 1% 2% 1% 0;
+}
+
+.comment-date {
+    font-size: 8pt;
+    color: #989898;
+    padding: 1% 1% 0 0;
+}
+
+.comment-body {
+    font-size: 9pt;
+    font-weight: lighter;
+}

@@ -13,7 +13,8 @@ function Incidents() {
 export const IncidentDetail = ({match}) => {
   const resources = useSelector((state) => state.auth.resources);
   const incident = useGetResource(() => resources.incident(match.params.id));
-  return <DetailContainer data={incident} />;
+  const comments = useGetResource(() => resources.comments(match.params.id));
+  return <DetailContainer data={incident} comments={comments} />;
 };
 
 export {Incidents};
