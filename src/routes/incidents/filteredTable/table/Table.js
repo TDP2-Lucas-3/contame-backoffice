@@ -1,12 +1,13 @@
 import React from 'react';
 import MaterialTable from 'material-table';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import {Container, Row, Col} from 'react-bootstrap';
+import {Container} from 'react-bootstrap';
 import {useStyles} from './Styles';
 import {columns, options, localization} from './data';
 import {HoodFilter} from './filter/hoodFilter/HoodFilter';
 import {CategoryFilter} from './filter/categoryFilter/CategoryFilter';
 import './Styles.css';
+import {PublicStateFilter} from './filter/PublicStateFilter';
 
 export const Table = (props) => {
   const classes = useStyles();
@@ -27,7 +28,9 @@ export const Table = (props) => {
               <CategoryFilter handleChange={props.handleCategoryFilterChange} />
             </div>
             <div className={'filter-row'}>
-              <CategoryFilter handleChange={props.handleCategoryFilterChange} />
+              <PublicStateFilter
+                handleChange={props.handlePublicStateFilterChange}
+              />
             </div>
             <div className={'filter-row'}>
               <CategoryFilter handleChange={props.handleCategoryFilterChange} />

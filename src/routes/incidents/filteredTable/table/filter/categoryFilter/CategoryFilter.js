@@ -6,7 +6,7 @@ import {useGetResource} from '../../../../../../services/Resources';
 export const CategoryFilter = (props) => {
   const resources = useSelector((state) => state.auth.resources);
   const categories = useGetResource(async () =>
-    (await resources.categories()).map((c) => c.value)
+    (await resources.categories()).map((c) => c.value),
   );
 
   return (
