@@ -14,6 +14,8 @@ export const FilteredTable = (props) => {
   const [hoodFilters, setHoodFilters] = useState([]);
   const [categoryFilters, setCategoryFilters] = useState([]);
   const [publicStateFilters, setPublicStateFilters] = useState([]);
+  const [privateStateFilters, setPrivateStateFilters] = useState([]);
+
   const handleHoodFilterChange = (newVal) => {
     setHoodFilters(newVal);
   };
@@ -26,17 +28,25 @@ export const FilteredTable = (props) => {
     setPublicStateFilters(newVal);
   };
 
+  const handlePrivateStateFilterChange = (newVal) => {
+    setPrivateStateFilters(newVal);
+  };
+
   const isFirstRun = useRef(true);
   useEffect(() => {
     const filterData = () => {
       const hoods = hoodFilters.map((filter) => filter.label);
       const categories = categoryFilters.map((filter) => filter.label);
       const publicStates = publicStateFilters.map((filter) => filter.label);
+      const privateStates = privateStateFilters.map((filter) => filter.label);
 
       return props.data
         .filter((incident) => filterFunction(hoods, incident.hood))
         .filter((incident) => filterFunction(categories, incident.category))
-        .filter((incident) => filterFunction(publicStates, incident.state));
+        .filter((incident) => filterFunction(publicStates, incident.state))
+        .filter((incident) =>
+          filterFunction(privateStates, incident.statePrivate),
+        );
     };
     (async () => {
       if (isFirstRun.current) {
@@ -45,7 +55,13 @@ export const FilteredTable = (props) => {
       }
       setFiltered(filterData());
     })();
-  }, [hoodFilters, categoryFilters, publicStateFilters, props.data]);
+  }, [
+    hoodFilters,
+    categoryFilters,
+    publicStateFilters,
+    privateStateFilters,
+    props.data,
+  ]);
 
   return (
     <Table
@@ -54,6 +70,7 @@ export const FilteredTable = (props) => {
       handleHoodFilterChange={handleHoodFilterChange}
       handleCategoryFilterChange={handleCategoryFilterChange}
       handlePublicStateFilterChange={handlePublicStateFilterChange}
+      handlePrivateStateFilterChange={handlePrivateStateFilterChange}
     />
   );
 };

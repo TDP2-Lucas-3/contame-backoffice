@@ -8,6 +8,7 @@ import {HoodFilter} from './filter/hoodFilter/HoodFilter';
 import {CategoryFilter} from './filter/categoryFilter/CategoryFilter';
 import './Styles.css';
 import {PublicStateFilter} from './filter/PublicStateFilter';
+import {PrivateStateFilter} from "./filter/PrivateStateFilter";
 
 export const Table = (props) => {
   const classes = useStyles();
@@ -33,7 +34,9 @@ export const Table = (props) => {
               />
             </div>
             <div className={'filter-row'}>
-              <CategoryFilter handleChange={props.handleCategoryFilterChange} />
+              <PrivateStateFilter
+                handleChange={props.handlePrivateStateFilterChange}
+              />
             </div>
 
             <p className={'clean-filters'}>Limpiar filtros</p>
