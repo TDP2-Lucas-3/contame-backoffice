@@ -24,12 +24,14 @@ export const columns = [
     dateSetting: {locale: 'es-ES'},
   },
   {
-    title: 'Fecha cierre',
-    field: 'completeDate',
-    type: 'date',
-    emptyValue: 'N/A',
-    align: 'center',
-    dateSetting: {locale: 'es-ES'},
+    title: 'Estado público',
+    field: 'state',
+    type: 'string',
+  },
+  {
+    title: 'Estado interno',
+    field: 'statePrivate',
+    type: 'string',
   },
   {
     title: 'Barrio',
