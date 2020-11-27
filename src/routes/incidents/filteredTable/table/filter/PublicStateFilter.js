@@ -6,7 +6,7 @@ import {useGetResource} from '../../../../../services/Resources';
 export const PublicStateFilter = (props) => {
   const resources = useSelector((state) => state.auth.resources);
   const states = useGetResource(async () =>
-    (await resources.states()).map((c) => c.value),
+    (await resources.publicStates()).map((c) => c.value),
   );
   return (
     <Filter

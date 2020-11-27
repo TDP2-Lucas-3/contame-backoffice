@@ -1,44 +1,52 @@
 import React from 'react';
-import Select, {components} from 'react-select';
+import Select from 'react-select';
 
 export const Filter = (props) => {
-  const ValueContainer = ({children, getValue, ...props}) => {
-    let values = getValue();
-    let valueLabel = '';
-
-    if (values.length > 0)
-      valueLabel += props.selectProps.getOptionLabel(values[0]);
-    if (values.length > 1) valueLabel += ` y ${values.length - 1} más`;
-
-    // Keep standard placeholder and input from react-select
-    let childsToRender = React.Children.toArray(children).filter(
-      (child) =>
-        ['Input', 'DummyInput', 'Placeholder'].indexOf(child.type.name) >= 0,
-    );
-
-    return (
-      <components.ValueContainer {...props}>
-        {!props.selectProps.inputValue && valueLabel}
-        {childsToRender}
-      </components.ValueContainer>
-    );
-  };
-
   const items = props.options.map((option) => ({
     label: option,
     value: option,
   }));
+
+  const customStyles = {
+    valueContainer: (base) => ({
+      ...base,
+      textOverflow: 'ellipsis',
+      maxWidth: '90%',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      display: 'initial',
+      fontSize: 10,
+    }),
+    menu: (base) => ({
+      ...base,
+      fontSize: 10,
+    }),
+  };
+
+  const multiValueContainer = ({selectProps, data}) => {
+    const label = data.label;
+    const allSelected = selectProps.value;
+    const index = allSelected.findIndex((selected) => selected.label === label);
+    const isFirstSelected = index === 0;
+    const labelPrefix =
+      isFirstSelected && allSelected.length > 1
+        ? ` (${allSelected.length})`
+        : '';
+    const labelSuffix = isFirstSelected ? '' : ', ';
+    return `${labelPrefix} ${label}${labelSuffix}`;
+  };
+
   return (
     <Select
+      styles={customStyles}
       isMulti
       options={items}
       placeholder={props.placeholder}
-      closeMenuOnSelect={false}
-      hideSelectedOptions={true}
+      hideSelectedOptions={false}
       noOptionsMessage={() => 'No hay más filtros'}
       onChange={props.handleChange}
       components={{
-        ValueContainer,
+        MultiValueContainer: multiValueContainer,
       }}
     />
   );

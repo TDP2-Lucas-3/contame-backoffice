@@ -32,6 +32,12 @@ export const FilteredTable = (props) => {
     setPrivateStateFilters(newVal);
   };
 
+  const cleanFilters = () => {
+    setHoodFilters([]);
+    setCategoryFilters([]);
+    setPublicStateFilters([]);
+    setPrivateStateFilters([]);
+  }
   const isFirstRun = useRef(true);
   useEffect(() => {
     const filterData = () => {
@@ -71,6 +77,7 @@ export const FilteredTable = (props) => {
       handleCategoryFilterChange={handleCategoryFilterChange}
       handlePublicStateFilterChange={handlePublicStateFilterChange}
       handlePrivateStateFilterChange={handlePrivateStateFilterChange}
+      cleanFilters={cleanFilters}
     />
   );
 };

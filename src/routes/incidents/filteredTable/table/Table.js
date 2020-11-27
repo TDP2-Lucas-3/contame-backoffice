@@ -39,7 +39,9 @@ export const Table = (props) => {
               />
             </div>
 
-            <p className={'clean-filters'}>Limpiar filtros</p>
+            <p className={'clean-filters'} onClick={props.cleanFilters}>
+              Limpiar filtros
+            </p>
           </div>
 
           <div className="table">
