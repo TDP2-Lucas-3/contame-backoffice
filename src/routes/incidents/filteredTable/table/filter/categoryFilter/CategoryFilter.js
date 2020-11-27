@@ -5,13 +5,16 @@ import {useGetResource} from '../../../../../../services/Resources';
 
 export const CategoryFilter = (props) => {
   const resources = useSelector((state) => state.auth.resources);
-  const categories = useGetResource(() => resources.categories());
+  const categories = useGetResource(async () =>
+    (await resources.categories()).map((c) => c.value),
+  );
 
   return (
     <Filter
-      options={!categories ? [] : categories.map((category) => category.name)}
-      placeholder={'Categorias'}
+      options={categories || []}
+      placeholder={'Categorías'}
       handleChange={props.handleChange}
+      reset={props.reset}
     />
   );
 };

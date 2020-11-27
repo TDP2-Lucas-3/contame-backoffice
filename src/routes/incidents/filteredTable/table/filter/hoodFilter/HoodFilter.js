@@ -11,7 +11,7 @@ export const HoodFilter = (props) => {
     hoods.forEach((hood) => {
       if (!filterHoods.includes(hood)) filterHoods.push(hood);
     });
-    return hoods;
+    return filterHoods;
   };
 
   return (
@@ -19,6 +19,7 @@ export const HoodFilter = (props) => {
       options={getHoods(props.data)}
       placeholder={'Barrios'}
       handleChange={props.handleChange}
+      reset={props.reset}
     />
   );
 };
