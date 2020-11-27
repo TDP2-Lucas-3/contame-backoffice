@@ -16,22 +16,25 @@
 .comment-box-title {
     color: #000000;
     font-weight: bold;
-    padding: 0 0 0% 40%;
     height: 10%;
     width:100%;
     font-family: Noto Sans CJK JP;
+    font-size: 14pt;
+    text-align: center;
 }
 
 .comments-box{
     font-weight: bold;
-    height: 88%;
+    height: 78%;
     width:100%;
     font-family: Noto Sans CJK JP;
+    margin-top: 1%;
 }
 
 .tabs {
-    margin-top:1%;
     height: 10%;
+    border-bottom: 1px solid #ebebeb;
+    padding: 0 0 0 1%;
 }
 
 

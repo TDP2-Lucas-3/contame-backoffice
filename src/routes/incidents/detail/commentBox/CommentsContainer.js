@@ -23,8 +23,18 @@ export const CommentsContainer = (props) => {
     <Container className="comment-box">
       <Row className="comment-box-title">Comentarios</Row>
       <Row className="tabs">
-        <CommentTab content={'Publicos'} toggle={toggle} value={'PUBLIC'} />
-        <CommentTab content={'Privados'} toggle={toggle} value={'PRIVATE'} />
+        <CommentTab
+          content={'Públicos'}
+          toggle={toggle}
+          value={'PUBLIC'}
+          activeTab={activeTab}
+        />
+        <CommentTab
+          content={'Privados'}
+          toggle={toggle}
+          value={'PRIVATE'}
+          activeTab={activeTab}
+        />
       </Row>
       <Row className="comments-box">
         {activeTab === 'PUBLIC'
@@ -34,7 +44,7 @@ export const CommentsContainer = (props) => {
                   key={comment.id}
                   name={comment.user.profile.name}
                   secondName={comment.user.profile.surename}
-                  date={Moment(comment.date).format('DD/MM/YYYY')}
+                  date={Moment(comment.date).format('DD/MM/YYYY HH:mm')}
                   comment={comment.comment}
                   image={comment.user.profile.photo}
                   type={comment.category}
@@ -47,7 +57,7 @@ export const CommentsContainer = (props) => {
                   key={comment.id}
                   name={comment.user.profile.name}
                   secondName={comment.user.profile.surename}
-                  date={Moment(comment.date).format('DD/MM/YYYY')}
+                  date={Moment(comment.date).format('DD/MM/YYYY HH:mm')}
                   comment={comment.comment}
                   image={comment.user.profile.photo}
                   type={comment.category}
