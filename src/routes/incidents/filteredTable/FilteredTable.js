@@ -21,17 +21,18 @@ export const FilteredTable = (props) => {
       const hoods = hoodFilter.map((filter) => filter.label);
       const categories = categoryFilter.map((filter) => filter.label);
 
+      console.log(categories);
       return data.filter((incident) => {
         if (hoodFilters.length > 0 && categoryFilters.length > 0) {
           return (
             hoods.includes(incident.hood) &&
-            categories.includes(incident.category.name)
+            categories.includes(incident.category)
           );
         }
         if (hoodFilters.length > 0) {
           return hoods.includes(incident.hood);
         }
-        return categories.includes(incident.category.name);
+        return categories.includes(incident.category);
       });
     };
     (async () => {

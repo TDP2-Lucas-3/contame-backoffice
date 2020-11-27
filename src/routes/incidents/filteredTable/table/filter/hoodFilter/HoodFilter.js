@@ -11,7 +11,7 @@ export const HoodFilter = (props) => {
     hoods.forEach((hood) => {
       if (!filterHoods.includes(hood)) filterHoods.push(hood);
     });
-    return hoods;
+    return filterHoods;
   };
 
   return (
