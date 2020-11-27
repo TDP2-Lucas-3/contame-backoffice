@@ -37,8 +37,9 @@ export const CommentsContainer = (props) => {
         />
       </Row>
       <Row className="comments-box">
-        {activeTab === 'PUBLIC'
-          ? publicComments.map((comment) => {
+        {activeTab === 'PUBLIC' ? (
+          publicComments.length > 0 ? (
+            publicComments.map((comment) => {
               return (
                 <Comment
                   key={comment.id}
@@ -51,19 +52,26 @@ export const CommentsContainer = (props) => {
                 />
               );
             })
-          : privateComments.map((comment) => {
-              return (
-                <Comment
-                  key={comment.id}
-                  name={comment.user.profile.name}
-                  secondName={comment.user.profile.surename}
-                  date={Moment(comment.date).format('DD/MM/YYYY HH:mm')}
-                  comment={comment.comment}
-                  image={comment.user.profile.photo}
-                  type={comment.category}
-                />
-              );
-            })}
+          ) : (
+            <p>Aún no hay comentarios públicos cargados</p>
+          )
+        ) : privateComments ? (
+          privateComments.map((comment) => {
+            return (
+              <Comment
+                key={comment.id}
+                name={comment.user.profile.name}
+                secondName={comment.user.profile.surename}
+                date={Moment(comment.date).format('DD/MM/YYYY HH:mm')}
+                comment={comment.comment}
+                image={comment.user.profile.photo}
+                type={comment.category}
+              />
+            );
+          })
+        ) : (
+          <p>Aún no hay comentarios privados cargados</p>
+        )}
       </Row>
     </Container>
   );
