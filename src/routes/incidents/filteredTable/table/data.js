@@ -40,6 +40,10 @@ export const columns = [
     title: 'Votos',
     field: 'votes',
   },
+  {
+    title: 'Subcategoria',
+    field: 'subcategory',
+  },
 ];
 
 export const options = {
