@@ -18,6 +18,7 @@ export const Detail = (props) => {
     closeDialog,
     modalVisible,
     privateModalVisible,
+    refreshComments,
   } = props;
 
   const [publicState, setPublicState] = useState(props.data.state);
@@ -69,6 +70,7 @@ export const Detail = (props) => {
         title={'Modificar estado público'}
         label={'Estado público'}
         setStateLabel={setPublicState}
+        refreshComments={refreshComments}
       />
 
       <ChangeStateModalContainer
@@ -81,6 +83,7 @@ export const Detail = (props) => {
         title={'Modificar estado interno'}
         label={'Estado interno'}
         setStateLabel={setPrivateState}
+        refreshComments={refreshComments}
       />
     </Container>
   );

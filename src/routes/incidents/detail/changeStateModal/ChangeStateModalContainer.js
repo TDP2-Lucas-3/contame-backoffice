@@ -25,6 +25,7 @@ export const ChangeStateModalContainer = (props) => {
     title,
     label,
     setStateLabel,
+    refreshComments,
   } = props;
   const resources = useSelector((state) => state.auth.resources);
 
@@ -43,6 +44,7 @@ export const ChangeStateModalContainer = (props) => {
     await resources[endpoint](id, state, comment);
     closeDialog();
     setStateLabel(getValueFromKey(states, state));
+    refreshComments();
   };
 
   return (
