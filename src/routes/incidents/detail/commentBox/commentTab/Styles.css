@@ -1,0 +1,24 @@
+.comment-tab {
+    height:100%;
+    font-family: Noto Sans CJK JP;
+    font-size: 12pt;
+    margin-right: 5%;
+}
+
+.comment-tab:hover {
+    color: #0692c3;
+}
+
+.comment-tab:active {
+    color: #0692c3;
+    z-index: 1;
+}
+
+.selected-comment-tab {
+    color: #0692c3;
+    z-index: 1;
+    height:100%;
+    margin-right: 5%;
+    font-family: Noto Sans CJK JP;
+    font-size: 13pt;
+}
