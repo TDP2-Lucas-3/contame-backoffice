@@ -19,6 +19,7 @@ export const HoodFilter = (props) => {
       options={getHoods(props.data)}
       placeholder={'Barrios'}
       handleChange={props.handleChange}
+      reset={props.reset}
     />
   );
 };

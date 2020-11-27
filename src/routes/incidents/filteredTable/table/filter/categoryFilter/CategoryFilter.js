@@ -14,6 +14,7 @@ export const CategoryFilter = (props) => {
       options={categories || []}
       placeholder={'Categorías'}
       handleChange={props.handleChange}
+      reset={props.reset}
     />
   );
 };

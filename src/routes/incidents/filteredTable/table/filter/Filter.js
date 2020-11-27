@@ -38,6 +38,7 @@ export const Filter = (props) => {
 
   return (
     <Select
+      key={props.reset || '0'}
       styles={customStyles}
       isMulti
       options={items}

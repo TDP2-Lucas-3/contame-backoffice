@@ -13,6 +13,7 @@ export const PrivateStateFilter = (props) => {
       options={states || []}
       placeholder={'Estado interno'}
       handleChange={props.handleChange}
+      reset={props.reset}
     />
   );
 };

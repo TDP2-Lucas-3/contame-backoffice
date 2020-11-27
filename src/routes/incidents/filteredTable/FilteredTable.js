@@ -15,6 +15,7 @@ export const FilteredTable = (props) => {
   const [categoryFilters, setCategoryFilters] = useState([]);
   const [publicStateFilters, setPublicStateFilters] = useState([]);
   const [privateStateFilters, setPrivateStateFilters] = useState([]);
+  const [selectReset, setSelectReset] = useState(null);
 
   const handleHoodFilterChange = (newVal) => {
     setHoodFilters(newVal);
@@ -37,7 +38,9 @@ export const FilteredTable = (props) => {
     setCategoryFilters([]);
     setPublicStateFilters([]);
     setPrivateStateFilters([]);
-  }
+    setSelectReset(new Date().toDateString());
+  };
+
   const isFirstRun = useRef(true);
   useEffect(() => {
     const filterData = () => {
@@ -78,6 +81,7 @@ export const FilteredTable = (props) => {
       handlePublicStateFilterChange={handlePublicStateFilterChange}
       handlePrivateStateFilterChange={handlePrivateStateFilterChange}
       cleanFilters={cleanFilters}
+      selectReset={selectReset}
     />
   );
 };

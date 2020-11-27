@@ -13,6 +13,7 @@ export const PublicStateFilter = (props) => {
       options={states || []}
       placeholder={'Estado público'}
       handleChange={props.handleChange}
+      reset={props.reset}
     />
   );
 };
