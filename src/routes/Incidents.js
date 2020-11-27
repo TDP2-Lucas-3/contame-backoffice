@@ -1,8 +1,8 @@
 import {FilteredTable} from './incidents/filteredTable/FilteredTable';
-import {Detail} from './incidents/detail/Detail';
 import {useSelector} from 'react-redux';
 import {useGetResource} from '../services/Resources';
 import React from 'react';
+import {DetailContainer} from './incidents/detail/DetailContainer';
 
 function Incidents() {
   const resources = useSelector((state) => state.auth.resources);
@@ -14,7 +14,7 @@ export const IncidentDetail = ({match}) => {
   const resources = useSelector((state) => state.auth.resources);
   const incident = useGetResource(() => resources.incident(match.params.id));
   const comments = useGetResource(() => resources.comments(match.params.id));
-  return <Detail data={incident} comments={comments} />;
+  return <DetailContainer data={incident} comments={comments} />;
 };
 
 export {Incidents};

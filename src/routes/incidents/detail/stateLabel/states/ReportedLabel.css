@@ -1,0 +1,58 @@
+.report-icon {
+    color: #000000;
+    left: 12px;
+    position: absolute;
+    top: 11px;
+}
+
+.reported-label-box{
+    background-color: #d2d2d2;
+    border-radius: 10px;
+    box-shadow: 0px 1px 4px #A0A0A0;
+    color: #A0A0A0;
+    display: flex;
+    font-family: "Lato", sans-serif;
+    font-size: 9pt;
+    height: 35px;
+    justify-content: flex-start;
+    left: 1000px;
+    position: absolute;
+    top: 62px;
+    width: 250px;
+}
+
+.reported-label-content {
+    color: #000000;
+    height: 80px;
+    left: 35px;
+    position: absolute;
+    top: 15px;
+    width: 200px;
+}
+
+.reported-label-text {
+    font-family: "Lato", sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+    width: 300px;
+}
+
+.reported-label-box:hover{
+    background-color: #A0A0A0;
+}
+
+.reported-label-box:active {
+    outline:0;
+    background-color: #F4D35E;
+}
+
+.box-private-position {
+    left: 730px;
+    background-color: #d2d2d2;
+}
+
+.reported-label-box p {
+    padding-left: 20px;
+    color: black;
+    width: 300px;
+}
