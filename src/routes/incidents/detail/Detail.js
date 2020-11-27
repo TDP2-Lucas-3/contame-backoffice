@@ -1,5 +1,5 @@
 import './Styles.css';
-import React from 'react';
+import React, {useState} from 'react';
 import Container from '@material-ui/core/Container';
 import '../filteredTable/table/Styles';
 import {Description} from './description/Description';
@@ -19,12 +19,15 @@ export const Detail = (props) => {
     privateModalVisible,
   } = props;
 
+  const [publicState, setPublicState] = useState(props.data.state);
+  const [privateState, setPrivateState] = useState(props.data.statePrivate);
+
   return (
     <Container>
       <h1 className="incident-title">{props.data.title}</h1>
       <StateLabel
-        statePrivate={props.data.statePrivate}
-        state={props.data.state}
+        statePrivate={privateState}
+        state={publicState}
         openPrivateModal={openPrivateModal}
         openPublicModal={openPublicModal}
       />
@@ -63,6 +66,7 @@ export const Detail = (props) => {
         fetchStatesMethod={'publicStates'}
         title={'Modificar estado público'}
         label={'Estado público'}
+        setStateLabel={setPublicState}
       />
 
       <ChangeStateModalContainer
@@ -74,6 +78,7 @@ export const Detail = (props) => {
         fetchStatesMethod={'privateStates'}
         title={'Modificar estado interno'}
         label={'Estado interno'}
+        setStateLabel={setPrivateState}
       />
     </Container>
   );

@@ -10,6 +10,10 @@ const getKeyFromValue = (array, value) => {
   return array.filter((obj) => obj.value === value).map((obj) => obj.key)[0];
 };
 
+const getValueFromKey = (array, key) => {
+  return array.filter((obj) => obj.key === key).map((obj) => obj.value)[0];
+};
+
 export const ChangeStateModalContainer = (props) => {
   const {
     modalVisible,
@@ -20,6 +24,7 @@ export const ChangeStateModalContainer = (props) => {
     fetchStatesMethod,
     title,
     label,
+    setStateLabel,
   } = props;
   const resources = useSelector((state) => state.auth.resources);
 
@@ -37,6 +42,7 @@ export const ChangeStateModalContainer = (props) => {
   const submit = async () => {
     await resources[endpoint](id, state, comment);
     closeDialog();
+    setStateLabel(getValueFromKey(states, state));
   };
 
   return (
