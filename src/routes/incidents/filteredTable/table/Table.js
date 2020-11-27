@@ -1,7 +1,7 @@
 import React from 'react';
 import MaterialTable from 'material-table';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import {Container} from 'react-bootstrap';
+import {Container, Row, Col} from 'react-bootstrap';
 import {useStyles} from './Styles';
 import {columns, options, localization} from './data';
 import {HoodFilter} from './filter/hoodFilter/HoodFilter';
@@ -16,14 +16,24 @@ export const Table = (props) => {
         <CircularProgress className={classes.centered} />
       ) : (
         <Container>
-          <div className="hood-filter">
-            <HoodFilter
-              data={props.data}
-              handleChange={props.handleHoodFilterChange}
-            />
-          </div>
-          <div className="category-filter">
-            <CategoryFilter handleChange={props.handleCategoryFilterChange} />
+          <div className={'filters'}>
+            <div className={'filter-row'}>
+              <HoodFilter
+                data={props.data}
+                handleChange={props.handleHoodFilterChange}
+              />
+            </div>
+            <div className={'filter-row'}>
+              <CategoryFilter handleChange={props.handleCategoryFilterChange} />
+            </div>
+            <div className={'filter-row'}>
+              <CategoryFilter handleChange={props.handleCategoryFilterChange} />
+            </div>
+            <div className={'filter-row'}>
+              <CategoryFilter handleChange={props.handleCategoryFilterChange} />
+            </div>
+
+            <p className={'clean-filters'}>Limpiar filtros</p>
           </div>
 
           <div className="table">

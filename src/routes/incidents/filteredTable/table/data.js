@@ -46,6 +46,7 @@ export const columns = [
 
 export const options = {
   selection: false,
+  search: false,
   headerStyle: {
     backgroundColor: '#1F271B',
     color: 'white',
