@@ -27,14 +27,14 @@
     left: 5px;
     position: absolute;
     top: 15px;
-    width: 200px;
+    width: 175px;
 }
 
 .reported-label-text {
     font-family: "Lato", sans-serif;
     font-size: 8pt;
     font-weight: bold;
-    width: 300px;
+    width: 175px;
 }
 
 .reported-label-box:hover{
