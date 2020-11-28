@@ -41,7 +41,7 @@ export const columns = [
     field: 'votes',
   },
   {
-    title: 'Subcategoria',
+    title: 'Tipo',
     field: 'subcategory',
   },
 ];

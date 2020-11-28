@@ -34,7 +34,10 @@ export const Detail = (props) => {
         openPrivateModal={openPrivateModal}
         openPublicModal={openPublicModal}
       />
-      <SubcategoryLabel content={props.data.subcategory} />
+      <SubcategoryLabel
+        category={props.data.category}
+        content={props.data.subcategory}
+      />
       <div className="map">
         <Map
           lat={parseFloat(props.data.lat)}
