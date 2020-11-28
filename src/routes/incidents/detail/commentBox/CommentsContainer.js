@@ -55,7 +55,7 @@ export const CommentsContainer = (props) => {
           ) : (
             <p>Aún no hay comentarios públicos cargados</p>
           )
-        ) : privateComments ? (
+        ) : privateComments.length > 0 ? (
           privateComments.map((comment) => {
             return (
               <Comment

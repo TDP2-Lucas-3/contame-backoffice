@@ -18,7 +18,7 @@ export const columns = [
     dateSetting: {locale: 'es-ES'},
   },
   {
-    title: 'Fecha ultima actualizacion',
+    title: 'Fecha ultima actualización',
     field: 'updateDate',
     type: 'date',
     dateSetting: {locale: 'es-ES'},

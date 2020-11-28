@@ -57,13 +57,13 @@ export const ChangeStateModal = (props) => {
               variant="outlined"
               value={comment}
               onChange={(e) => {
-                if (e.target.value.length > 150) {
+                if (e.target.value.length > 1000) {
                   e.preventDefault();
                   return;
                 }
                 setComment(e.target.value);
               }}
-              placeholder={'Comentario interno. Máximo 150 caracteres'}
+              placeholder={'Comentario interno. Máximo 1000 caracteres'}
             />
           </FormControl>
         </DialogContent>
