@@ -2,10 +2,20 @@ import {useEffect, useRef, useState} from 'react';
 import {Table} from './table/Table';
 import React from 'react';
 
+const filterFunction = (array, key) => {
+  if (array.length > 0) {
+    return array.includes(key);
+  }
+  return true;
+};
+
 export const FilteredTable = (props) => {
   const [filteredData, setFiltered] = useState(null);
   const [hoodFilters, setHoodFilters] = useState([]);
   const [categoryFilters, setCategoryFilters] = useState([]);
+  const [publicStateFilters, setPublicStateFilters] = useState([]);
+  const [privateStateFilters, setPrivateStateFilters] = useState([]);
+  const [selectReset, setSelectReset] = useState(null);
 
   const handleHoodFilterChange = (newVal) => {
     setHoodFilters(newVal);
@@ -15,35 +25,52 @@ export const FilteredTable = (props) => {
     setCategoryFilters(newVal);
   };
 
+  const handlePublicStateFilterChange = (newVal) => {
+    setPublicStateFilters(newVal);
+  };
+
+  const handlePrivateStateFilterChange = (newVal) => {
+    setPrivateStateFilters(newVal);
+  };
+
+  const cleanFilters = () => {
+    setHoodFilters([]);
+    setCategoryFilters([]);
+    setPublicStateFilters([]);
+    setPrivateStateFilters([]);
+    setSelectReset(new Date().toDateString());
+  };
+
   const isFirstRun = useRef(true);
   useEffect(() => {
-    const filterData = (hoodFilter, categoryFilter, data) => {
-      const hoods = hoodFilter.map((filter) => filter.label);
-      const categories = categoryFilter.map((filter) => filter.label);
+    const filterData = () => {
+      const hoods = hoodFilters.map((filter) => filter.label);
+      const categories = categoryFilters.map((filter) => filter.label);
+      const publicStates = publicStateFilters.map((filter) => filter.label);
+      const privateStates = privateStateFilters.map((filter) => filter.label);
 
-      return data.filter((incident) => {
-        if (hoodFilters.length > 0 && categoryFilters.length > 0) {
-          return (
-            hoods.includes(incident.hood) &&
-            categories.includes(incident.category.name)
-          );
-        }
-        if (hoodFilters.length > 0) {
-          return hoods.includes(incident.hood);
-        }
-        return categories.includes(incident.category.name);
-      });
+      return props.data
+        .filter((incident) => filterFunction(hoods, incident.hood))
+        .filter((incident) => filterFunction(categories, incident.category))
+        .filter((incident) => filterFunction(publicStates, incident.state))
+        .filter((incident) =>
+          filterFunction(privateStates, incident.statePrivate),
+        );
     };
     (async () => {
       if (isFirstRun.current) {
         isFirstRun.current = false;
         return;
       }
-      hoodFilters.length > 0 || categoryFilters.length > 0
-        ? setFiltered(filterData(hoodFilters, categoryFilters, props.data))
-        : setFiltered(props.data);
+      setFiltered(filterData());
     })();
-  }, [hoodFilters, categoryFilters, props.data]);
+  }, [
+    hoodFilters,
+    categoryFilters,
+    publicStateFilters,
+    privateStateFilters,
+    props.data,
+  ]);
 
   return (
     <Table
@@ -51,6 +78,10 @@ export const FilteredTable = (props) => {
       filteredData={filteredData}
       handleHoodFilterChange={handleHoodFilterChange}
       handleCategoryFilterChange={handleCategoryFilterChange}
+      handlePublicStateFilterChange={handlePublicStateFilterChange}
+      handlePrivateStateFilterChange={handlePrivateStateFilterChange}
+      cleanFilters={cleanFilters}
+      selectReset={selectReset}
     />
   );
 };
