@@ -7,6 +7,8 @@ import {columns, options, localization} from './data';
 import {HoodFilter} from './filter/hoodFilter/HoodFilter';
 import {CategoryFilter} from './filter/categoryFilter/CategoryFilter';
 import './Styles.css';
+import {PublicStateFilter} from './filter/PublicStateFilter';
+import {PrivateStateFilter} from './filter/PrivateStateFilter';
 
 export const Table = (props) => {
   const classes = useStyles();
@@ -16,14 +18,36 @@ export const Table = (props) => {
         <CircularProgress className={classes.centered} />
       ) : (
         <Container>
-          <div className="hood-filter">
-            <HoodFilter
-              data={props.data}
-              handleChange={props.handleHoodFilterChange}
-            />
-          </div>
-          <div className="category-filter">
-            <CategoryFilter handleChange={props.handleCategoryFilterChange} />
+          <div className={'filters'}>
+            <div className={'filter-row'}>
+              <HoodFilter
+                data={props.data}
+                reset={props.selectReset}
+                handleChange={props.handleHoodFilterChange}
+              />
+            </div>
+            <div className={'filter-row'}>
+              <CategoryFilter
+                reset={props.selectReset}
+                handleChange={props.handleCategoryFilterChange}
+              />
+            </div>
+            <div className={'filter-row'}>
+              <PublicStateFilter
+                reset={props.selectReset}
+                handleChange={props.handlePublicStateFilterChange}
+              />
+            </div>
+            <div className={'filter-row'}>
+              <PrivateStateFilter
+                reset={props.selectReset}
+                handleChange={props.handlePrivateStateFilterChange}
+              />
+            </div>
+
+            <p className={'clean-filters'} onClick={props.cleanFilters}>
+              Limpiar filtros
+            </p>
           </div>
 
           <div className="table">

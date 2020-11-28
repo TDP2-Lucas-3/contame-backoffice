@@ -1,19 +1,22 @@
-.hood-filter {
-    width: 20%;
+.filters {
+    left: 260px;
+    top: 120px;
     position: absolute;
-    left: 18%;
-    top: 20%;
-    font-size: 9pt;
+    display: flex;
+    width: 1000px;
+    align-content: space-between;
 }
 
-.category-filter {
-    width: 20%;
-    position: absolute;
-    left: 40%;
-    top: 20%;
-    font-size: 9pt;
+.filter-row {
+    width: 225px;
+    padding: 0 10px 10px 0;
 }
 
+.clean-filters {
+    font-size: 10pt;
+    text-decoration: underline;
+    color: dodgerblue;
+}
 .table {
     position: absolute;
     left: 230px;
