@@ -18,13 +18,13 @@
     left: 1100px;
     position: absolute;
     top: 62px;
-    width: 150px;
+    width: 180px;
 }
 
 .reported-label-content {
     color: #000000;
     height: 80px;
-    left: 25px;
+    left: 5px;
     position: absolute;
     top: 15px;
     width: 200px;
@@ -32,7 +32,7 @@
 
 .reported-label-text {
     font-family: "Lato", sans-serif;
-    font-size: 10pt;
+    font-size: 8pt;
     font-weight: bold;
     width: 300px;
 }
@@ -47,7 +47,7 @@
 }
 
 .box-private-position {
-    left: 940px;
+    left: 910px;
     background-color:  #F4D35E;
 }
 
