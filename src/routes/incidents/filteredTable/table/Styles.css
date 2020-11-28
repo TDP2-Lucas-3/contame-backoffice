@@ -16,8 +16,8 @@
 
 .table {
     position: absolute;
-    left: 17.5%;
-    top: 17%;
-    width: 82%;
+    left: 230px;
+    top: 110px;
+    width: 1050px;
     z-index: -1;
 }
