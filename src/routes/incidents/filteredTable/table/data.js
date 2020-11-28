@@ -56,9 +56,13 @@ export const options = {
     color: 'white',
     fontSize: '11pt',
     fontWeight: 'bold',
+    width: '2px',
+    maxWidth: '2px',
   },
   cellStyle: {
     fontSize: '9pt',
+    width: '20',
+    maxWidth: '20',
   },
   actionsColumnIndex: -1,
 };
