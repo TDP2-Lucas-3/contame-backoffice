@@ -10,6 +10,7 @@ import {Map} from './map/MapWrapper';
 import {StateLabel} from './stateLabel/StateLabel';
 import {ChangeStateModalContainer} from './changeStateModal/ChangeStateModalContainer';
 import {CommentsContainer} from './commentBox/CommentsContainer';
+import {SubcategoryLabel} from './subcategoryLabel/SubcategoryLabel';
 
 export const Detail = (props) => {
   const {
@@ -32,6 +33,10 @@ export const Detail = (props) => {
         state={publicState}
         openPrivateModal={openPrivateModal}
         openPublicModal={openPublicModal}
+      />
+      <SubcategoryLabel
+        category={props.data.category}
+        content={props.data.subcategory}
       />
       <div className="map">
         <Map

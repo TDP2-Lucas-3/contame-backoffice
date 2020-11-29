@@ -42,6 +42,10 @@ export const columns = [
     title: 'Votos',
     field: 'votes',
   },
+  {
+    title: 'Tipo',
+    field: 'subcategory',
+  },
 ];
 
 export const options = {
@@ -52,9 +56,13 @@ export const options = {
     color: 'white',
     fontSize: '11pt',
     fontWeight: 'bold',
+    width: '2px',
+    maxWidth: '2px',
   },
   cellStyle: {
     fontSize: '9pt',
+    width: '20',
+    maxWidth: '20',
   },
   actionsColumnIndex: -1,
 };

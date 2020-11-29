@@ -19,8 +19,8 @@
 }
 .table {
     position: absolute;
-    left: 250px;
+    left: 225px;
     top: 110px;
-    width: 1000px;
+    width: 1050px;
     z-index: -1;
 }

@@ -1,0 +1,43 @@
+.subcategory-label {
+    border-radius: 10px;
+    box-shadow: 0px 1px 4px #A0A0A0;
+    color: #A0A0A0;
+    display: flex;
+    font-family: "Lato", sans-serif;
+    font-size: 9pt;
+    height: 35px;
+    justify-content: flex-start;
+    left: 760px;
+    position: absolute;
+    top: 62px;
+    width: 140px;
+}
+
+
+.subcategory-content {
+    color: #000000;
+    height: 35px;
+    position: absolute;
+    top: 15px;
+    width: 140px;
+    left: 5px;
+}
+
+.label-text {
+    font-family: "Lato", sans-serif;
+    font-size: 8pt;
+    font-weight: bold;
+    width: 135px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    overflow: hidden
+}
+
+.subcategory-label p {
+    padding-left: 5px;
+    color: black;
+    width: 300px;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+}
