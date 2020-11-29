@@ -11,6 +11,10 @@ export const columns = [
     field: 'category',
   },
   {
+    title: 'Tipo',
+    field: 'subcategory',
+  },
+  {
     title: 'Fecha reporte',
     field: 'creationDate',
     type: 'date',
@@ -18,7 +22,7 @@ export const columns = [
     dateSetting: {locale: 'es-ES'},
   },
   {
-    title: 'Fecha ultima actualización',
+    title: 'Fecha última actualización',
     field: 'updateDate',
     type: 'date',
     dateSetting: {locale: 'es-ES'},
@@ -41,10 +45,6 @@ export const columns = [
   {
     title: 'Votos',
     field: 'votes',
-  },
-  {
-    title: 'Tipo',
-    field: 'subcategory',
   },
 ];
 
@@ -76,6 +76,6 @@ export const localization = {
     labelRowsSelect: 'filas',
   },
   body: {
-    emptyDataSourceMessage: 'No se han registrado incidencias todavia',
+    emptyDataSourceMessage: 'No se hallaron incidencias con estos filtros.',
   },
 };

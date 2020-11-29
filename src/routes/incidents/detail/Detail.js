@@ -48,19 +48,19 @@ export const Detail = (props) => {
       <Description data={props.data.description} />
       <div className="creation-date">
         <InfoBox
-          data={Moment(props.data.creationDate).format('DD/MM/YYYY')}
+          data={Moment(props.data.creationDate).format('DD/MM/YYYY HH:mm')}
           header={'Creada'}
         />
       </div>
       <div className="update-date">
         <InfoBox
-          data={Moment(props.data.updateDate).format('DD/MM/YYYY')}
+          data={Moment(props.data.updateDate).format('DD/MM/YYYY HH:mm')}
           header={'Actualizada'}
         />
       </div>
       <div className="close-date">
         <InfoBox
-          data={Moment(props.data.completeDate).format('DD/MM/YYYY')}
+          data={Moment(props.data.completeDate).format('DD/MM/YYYY HH:mm')}
           header={'Cierre'}
         />
       </div>
