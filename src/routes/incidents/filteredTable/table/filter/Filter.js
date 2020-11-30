@@ -42,6 +42,7 @@ export const Filter = (props) => {
       styles={customStyles}
       isMulti
       options={items}
+      isSearchable={false}
       placeholder={props.placeholder}
       hideSelectedOptions={false}
       noOptionsMessage={() => 'No hay más filtros'}
