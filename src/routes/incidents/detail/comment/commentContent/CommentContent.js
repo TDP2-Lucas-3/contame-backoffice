@@ -14,7 +14,7 @@ export const CommentContent = (props) => {
           date={props.date}
         />
       </Row>
-      <Row>
+      <Row className="comment-body">
         <CommentBody comment={props.comment} />
       </Row>
     </>
