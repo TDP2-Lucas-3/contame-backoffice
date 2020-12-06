@@ -4,12 +4,13 @@ import './home/Home.css';
 import {Row, Col, Container} from 'react-bootstrap';
 import {Select} from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
+import {StatesByCategory} from './home/charts/states_by_category/StatesByCategory';
 
 const STATES_BY_CATEGORY = 'Estados por categoría';
 const HEAT_MAP = 'Mapa de calor';
 
 const CHART_COMPONENTS = {
-  [STATES_BY_CATEGORY]: <p>Estado por categoría</p>,
+  [STATES_BY_CATEGORY]: <StatesByCategory />,
   [HEAT_MAP]: <p>Heat map!</p>,
 };
 
