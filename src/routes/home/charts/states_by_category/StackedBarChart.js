@@ -4,21 +4,24 @@ import React from 'react';
 import {chartOptions} from './options';
 
 const parseData = (data) => {
-  const state = data[0].categories.map((category) => category.name);
   const series = data.map((x) => {
     return {name: x.name, data: x.categories.map((category) => category.value)};
   });
 
   return {
     ...chartOptions,
-    xAxis: {
-      categories: state,
-    },
     series,
+  };
+};
+
+const xAxis = (categoryTotals) => {
+  return {
+    categories: categoryTotals.map((x) => x.category),
   };
 };
 
 export const StackedBarChart = (props) => {
   const options = parseData(props.data);
+  options.xAxis = xAxis(props.categoryTotals);
   return <HighchartsReact highcharts={Highcharts} options={options} />;
 };

@@ -47,8 +47,7 @@ export const chartOptions = {
     shadow: false,
   },
   tooltip: {
-    headerFormat: '<b>{point.x}</b><br/>',
-    pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}',
+    pointFormat: '<b>{series.name}</b>: {point.y}',
   },
   plotOptions: {
     column: {
