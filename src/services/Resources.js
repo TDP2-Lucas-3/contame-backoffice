@@ -66,6 +66,13 @@ export class Resources {
     });
     return response.data;
   }
+
+  // Data for charts
+  async stateData() {
+    const url = `${BACKEND_URL}data/state`;
+    const response = await this.client.post(url);
+    return response.data;
+  }
 }
 
 export const useGetResource = (fetchResource) => {
