@@ -73,6 +73,15 @@ export class Resources {
     const response = await this.client.post(url);
     return response.data;
   }
+
+  async mapData(category) {
+    let url = `${BACKEND_URL}data/map`;
+    if (category) {
+      url = `${url}?category=${category}`;
+    }
+    const response = await this.client.get(url);
+    return response.data;
+  }
 }
 
 export const useGetResource = (fetchResource) => {
