@@ -1,29 +1,20 @@
 .picture-column {
-    width: 10%;
     height: 100%;
-    justify-content: center;
     padding: 0.5% 0% 0 1%;
     box-sizing: content-box;
-}
-
-.public-content-column {
-    height: 100%;
-    width: 90%;
-    box-sizing: content-box;
-}
-
-.private-content-column {
-    height: 100%;
-    width: 90%;
-    box-sizing: content-box;
+    margin: 0 5% 0 0;
 }
 
 .incident-comment-container {
     border: solid 1px gainsboro;
-    width: 100%;
     height: auto;
+    width: 100%;
     border-radius: 5px;
-    margin-top: 0.5%;
-    display:flex;
-    flex-direction: row;
+    margin: 0.5% 0 0 1%;
+    display: flex;
+}
+
+.comment-content {
+    display: flex;
+    flex-direction: column;
 }
