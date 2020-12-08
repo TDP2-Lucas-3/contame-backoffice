@@ -37,6 +37,7 @@ export const columns = [
 
 export const options = {
   selection: false,
+  search: false,
   sorting: true,
   headerStyle: {
     backgroundColor: '#F4D35E',

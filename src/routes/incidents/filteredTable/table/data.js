@@ -52,8 +52,8 @@ export const options = {
   selection: false,
   search: false,
   headerStyle: {
-    backgroundColor: '#1F271B',
-    color: 'white',
+    backgroundColor: '#F4D35E',
+    color: '#1F271B',
     fontSize: '11pt',
     fontWeight: 'bold',
     width: '2px',
