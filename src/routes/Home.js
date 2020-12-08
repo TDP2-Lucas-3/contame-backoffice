@@ -5,7 +5,6 @@ import {Row, Col, Container} from 'react-bootstrap';
 import {Select} from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
 import {StatesByCategory} from './home/charts/states_by_category/StatesByCategory';
-import {StateDataTable} from './home/stateDataTable/StateDataTable';
 
 const STATES_BY_CATEGORY = 'Estados por categoría';
 const HEAT_MAP = 'Mapa de calor';
@@ -36,7 +35,6 @@ export const Home = withRouter(() => {
         </Row>
 
         {CHART_COMPONENTS[chart]}
-        <StateDataTable />
       </Container>
     </div>
   );
