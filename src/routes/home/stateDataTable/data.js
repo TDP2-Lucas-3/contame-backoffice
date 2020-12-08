@@ -1,17 +1,21 @@
 export const getColumns = (props) => {
   const columns = [];
+
   columns.push({
     title: 'Estado',
     field: 'name',
   });
 
-  columns.push({
-    title: `categories[0].category`,
-    field: `categories[0].category`,
-  });
+  for (let index in props[0].categories) {
+    const item = props[0].categories[index];
+
+    columns.push({
+      title: item.category,
+      field: `categories[${index}].value`,
+    });
+  }
 
   return columns;
-  // Faltan agregar los campos faltantes
 };
 
 export const options = {
