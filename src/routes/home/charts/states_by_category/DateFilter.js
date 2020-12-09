@@ -9,6 +9,7 @@ export const DateFilter = (props) => {
   };
   return (
     <DatePicker
+      disableToolbar
       variant="inline"
       label={props.label}
       value={date}

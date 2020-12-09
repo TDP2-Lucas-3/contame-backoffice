@@ -6,25 +6,17 @@ import {ALL_HOODS} from './Filters';
 
 export const HoodFilter = (props) => {
   return (
-    <Row>
-      <Col
-        sm={{
-          offset: 9,
-          size: 2,
-        }}>
-        <Select
-          labelId="hood-select"
-          value={props.selectedHood}
-          defaultValue={ALL_HOODS}
-          onChange={(e) => props.onChange(e.target.value)}>
-          <MenuItem value={ALL_HOODS}>{ALL_HOODS}</MenuItem>
-          {props.hoods.map((hood) => (
-            <MenuItem key={hood} value={hood}>
-              {hood}
-            </MenuItem>
-          ))}
-        </Select>
-      </Col>
-    </Row>
+    <Select
+      labelId="hood-select"
+      value={props.selectedHood}
+      defaultValue={ALL_HOODS}
+      onChange={(e) => props.onChange(e.target.value)}>
+      <MenuItem value={ALL_HOODS}>{ALL_HOODS}</MenuItem>
+      {props.hoods.map((hood) => (
+        <MenuItem key={hood} value={hood}>
+          {hood}
+        </MenuItem>
+      ))}
+    </Select>
   );
 };

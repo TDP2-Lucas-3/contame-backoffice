@@ -2,6 +2,7 @@ import {HoodFilter} from './HoodFilter';
 import {Row, Col} from 'reactstrap';
 import React, {useState} from 'react';
 import {DateFilter} from './DateFilter';
+import {DatePicker} from "@material-ui/pickers";
 
 export const ALL_HOODS = 'Todos los Barrios';
 
@@ -13,8 +14,8 @@ export const Filters = (props) => {
     props.onHoodChange(hood);
   };
   return (
-    <Row>
-      <Col>
+    <Row style={{marginBottom: 20}}>
+      <Col style={{marginTop: 20}}>
         <HoodFilter
           hoods={props.hoods}
           onChange={onHoodChange}
