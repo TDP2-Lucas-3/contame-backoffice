@@ -39,14 +39,14 @@ export const HeatMap = () => {
     await filterByCategory(category);
   };
 
-  return points && categories ? (
+  return categories ? (
     <>
       <CategoryFilter
         selectedCategory={selectedCategory}
         categories={categories}
         onChange={onChange}
       />
-      <HeatMapChart data={points} />
+      {points ? <HeatMapChart data={points} /> : <CircularProgress />}
     </>
   ) : (
     <CircularProgress />
