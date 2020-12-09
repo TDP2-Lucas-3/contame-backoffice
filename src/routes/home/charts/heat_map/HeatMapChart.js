@@ -15,7 +15,7 @@ const InnerHeatMapChart = withScriptjs(
           )}
           options={{
             opacity: 1,
-            radius: 20,
+            maxIntensity: 25,
           }}
         />
       </GoogleMap>
