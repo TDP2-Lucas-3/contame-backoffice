@@ -11,16 +11,21 @@ export const StatesByCategory = () => {
   const [hoods, setHoods] = useState(null);
   const [response, setResponse] = useState(null);
 
-  const refreshData = async () => {
-    const resp = await resources.stateData();
+  const refreshData = async (newHood) => {
+    const resp = await resources.stateData(newHood);
     setHoods(resp.hoods);
     setResponse(resp);
   };
   useGetResource(refreshData);
 
+  const onHoodChange = async (newHood) => {
+    setResponse(null);
+    await refreshData(newHood);
+  };
+
   return hoods ? (
     <>
-      <Filters hoods={hoods} />
+      <Filters hoods={hoods} onHoodChange={onHoodChange} />
       {response ? (
         <>
           <StackedBarChart
