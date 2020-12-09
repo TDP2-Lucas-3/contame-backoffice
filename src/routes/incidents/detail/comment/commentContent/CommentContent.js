@@ -6,7 +6,7 @@ import {CommentBody} from './CommentBody';
 
 export const CommentContent = (props) => {
   return (
-    <>
+    <div className="comment-content">
       <Row>
         <CommentInfo
           name={props.name}
@@ -17,6 +17,6 @@ export const CommentContent = (props) => {
       <Row className="comment-body">
         <CommentBody comment={props.comment} />
       </Row>
-    </>
+    </div>
   );
 };

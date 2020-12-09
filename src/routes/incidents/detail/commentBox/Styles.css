@@ -17,18 +17,17 @@
     color: #000000;
     font-weight: bold;
     height: 10%;
-    width:100%;
     font-family: Noto Sans CJK JP;
     font-size: 14pt;
-    text-align: center;
+    padding: 0 0 0 40%;
 }
 
 .comments-box{
     font-weight: bold;
     height: 78%;
-    width:100%;
     font-family: Noto Sans CJK JP;
     margin-top: 1%;
+    padding: 0% 1% 0 0;
 }
 
 .tabs {
