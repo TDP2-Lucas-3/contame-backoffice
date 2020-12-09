@@ -8,7 +8,6 @@ export const HeatMap = () => {
   const resources = useSelector((state) => state.auth.resources);
   const points = useGetResource(async () => {
     const response = await resources.incidents();
-    console.log(response);
     return response.map((incident) => {
       return {lat: incident.lat, lng: incident.lon};
     });
