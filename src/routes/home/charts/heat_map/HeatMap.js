@@ -3,9 +3,7 @@ import {useSelector} from 'react-redux';
 import {useGetResource} from '../../../../services/Resources';
 import {HeatMapChart} from './HeatMapChart';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import {Select} from '@material-ui/core';
-import {Row, Col} from 'react-bootstrap';
-import MenuItem from '@material-ui/core/MenuItem';
+import {CategoryFilter} from './CategoryFilter';
 
 const ALL_CATEGORIES = 'Todas las Categorías';
 
@@ -36,31 +34,18 @@ export const HeatMap = () => {
     );
   };
 
+  const onChange = async (category) => {
+    setCategory(category);
+    await filterByCategory(category);
+  };
+
   return points && categories ? (
     <>
-      <Row>
-        <Col
-          sm={{
-            offset: 9,
-            size: 2,
-          }}>
-          <Select
-            labelId="category-select"
-            value={selectedCategory}
-            defaultValue={'Categoría'}
-            onChange={(e) => {
-              setCategory(e.target.value);
-              filterByCategory(e.target.value);
-            }}>
-            <MenuItem value={ALL_CATEGORIES}>{ALL_CATEGORIES}</MenuItem>
-            {categories.map((category) => (
-              <MenuItem key={category.value} value={category.value}>
-                {category.value}
-              </MenuItem>
-            ))}
-          </Select>
-        </Col>
-      </Row>
+      <CategoryFilter
+        selectedCategory={selectedCategory}
+        categories={categories}
+        onChange={onChange}
+      />
       <HeatMapChart data={points} />
     </>
   ) : (
