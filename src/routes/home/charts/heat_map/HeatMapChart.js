@@ -13,6 +13,10 @@ const InnerHeatMapChart = withScriptjs(
           data={props.data.map(
             (x) => new window.google.maps.LatLng(x.lat, x.lng),
           )}
+          options={{
+            opacity: 1,
+            radius: 20,
+          }}
         />
       </GoogleMap>
     );
