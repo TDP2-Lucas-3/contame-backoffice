@@ -6,11 +6,13 @@ export const DateFilter = (props) => {
 
   const handleDateChange = (newDate) => {
     setDate(newDate);
+    props.onDateChange(newDate.format('YY-MM-DD'))
   };
   return (
     <DatePicker
       disableToolbar
       variant="inline"
+      format="YYYY-MM-DD"
       label={props.label}
       value={date}
       onChange={handleDateChange}
