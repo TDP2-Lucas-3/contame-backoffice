@@ -11,8 +11,12 @@ export const StatesByCategory = () => {
   const [hoods, setHoods] = useState(null);
   const [response, setResponse] = useState(null);
 
-  const refreshData = async (newHood) => {
-    const resp = await resources.stateData(newHood);
+  const [selectedHood, setSelectedHood] = useState(null);
+  const [selectedStartDate, setSelectedStartDate] = useState(null);
+  const [selectedEndDate, setSelectedEndDate] = useState(null);
+
+  const refreshData = async (newHood, startDate, endDate) => {
+    const resp = await resources.stateData(newHood, startDate, endDate);
     setHoods(resp.hoods);
     setResponse(resp);
   };
@@ -20,12 +24,30 @@ export const StatesByCategory = () => {
 
   const onHoodChange = async (newHood) => {
     setResponse(null);
-    await refreshData(newHood);
+    setSelectedHood(newHood);
+    await refreshData(newHood, selectedStartDate, selectedEndDate);
+  };
+
+  const onStartDateChange = async (startDate) => {
+    setResponse(null);
+    setSelectedStartDate(startDate);
+    await refreshData(selectedHood, startDate, selectedEndDate);
+  };
+
+  const onEndDateChange = async (endDate) => {
+    setResponse(null);
+    setSelectedEndDate(endDate);
+    await refreshData(selectedHood, selectedStartDate, endDate);
   };
 
   return hoods ? (
     <>
-      <Filters hoods={hoods} onHoodChange={onHoodChange} />
+      <Filters
+        hoods={hoods}
+        onHoodChange={onHoodChange}
+        onStartDateChange={onStartDateChange}
+        onEndDateChange={onEndDateChange}
+      />
       {response ? (
         <>
           <StackedBarChart

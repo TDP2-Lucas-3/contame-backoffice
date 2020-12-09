@@ -6,7 +6,7 @@ export const DateFilter = (props) => {
 
   const handleDateChange = (newDate) => {
     setDate(newDate);
-    props.onDateChange(newDate.format('YY-MM-DD'))
+    props.onDateChange(newDate.format('YYYY-MM-DD'));
   };
   return (
     <DatePicker

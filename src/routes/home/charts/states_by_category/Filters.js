@@ -12,10 +12,16 @@ export const Filters = (props) => {
         <HoodFilter hoods={props.hoods} onChange={props.onHoodChange} />
       </Col>
       <Col>
-        <DateFilter label={'Fecha apertura desde'} />
+        <DateFilter
+          onDateChange={props.onStartDateChange}
+          label={'Fecha apertura desde'}
+        />
       </Col>
       <Col>
-        <DateFilter label={'Fecha apertura hasta'} />
+        <DateFilter
+          onDateChange={props.onEndDateChange}
+          label={'Fecha apertura hasta'}
+        />
       </Col>
     </Row>
   );
