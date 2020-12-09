@@ -7,6 +7,8 @@ import {Select} from '@material-ui/core';
 import {Row, Col} from 'react-bootstrap';
 import MenuItem from '@material-ui/core/MenuItem';
 
+const ALL_CATEGORIES = 'Todas las Categorías';
+
 export const HeatMap = () => {
   const resources = useSelector((state) => state.auth.resources);
 
@@ -18,10 +20,14 @@ export const HeatMap = () => {
     const categories = await resources.categories();
     setCategories(categories);
   });
-  const [selectedCategory, setCategory] = useState('Categoría');
+  const [selectedCategory, setCategory] = useState(ALL_CATEGORIES);
 
   const filterByCategory = async (category) => {
     setPoints(null);
+    if (category === ALL_CATEGORIES) {
+      category = null;
+    }
+
     const response = await resources.mapData(category);
     setPoints(
       response.incidents.map((incident) => {
@@ -46,7 +52,7 @@ export const HeatMap = () => {
               setCategory(e.target.value);
               filterByCategory(e.target.value);
             }}>
-            <MenuItem value={'Categoría'}>Categoría</MenuItem>
+            <MenuItem value={ALL_CATEGORIES}>{ALL_CATEGORIES}</MenuItem>
             {categories.map((category) => (
               <MenuItem key={category.value} value={category.value}>
                 {category.value}
