@@ -9,11 +9,15 @@ import {Filters} from './Filters';
 export const StatesByCategory = () => {
   const resources = useSelector((state) => state.auth.resources);
   const [hoods, setHoods] = useState(null);
-  const response = useGetResource(async () => {
+  const [response, setResponse] = useState(null);
+
+  const refreshData = async () => {
     const resp = await resources.stateData();
     setHoods(resp.hoods);
-    return resp;
-  });
+    setResponse(resp);
+  };
+  useGetResource(refreshData);
+
   return hoods ? (
     <>
       <Filters hoods={hoods} />

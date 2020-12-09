@@ -2,7 +2,6 @@ import {HoodFilter} from './HoodFilter';
 import {Row, Col} from 'reactstrap';
 import React, {useState} from 'react';
 import {DateFilter} from './DateFilter';
-import {DatePicker} from "@material-ui/pickers";
 
 export const ALL_HOODS = 'Todos los Barrios';
 
