@@ -21,6 +21,7 @@ export const getColumns = (props) => {
 export const options = {
   selection: false,
   search: false,
+  paging: false,
   headerStyle: {
     backgroundColor: 'white',
     color: 'black',
