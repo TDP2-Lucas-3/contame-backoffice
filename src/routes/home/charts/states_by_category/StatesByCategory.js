@@ -4,7 +4,7 @@ import {useSelector} from 'react-redux';
 import {useGetResource} from '../../../../services/Resources';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import {StateDataTable} from '../../stateDataTable/StateDataTable';
-import {Filters} from './Filters';
+import {ALL_HOODS, Filters} from './Filters';
 
 export const StatesByCategory = () => {
   const resources = useSelector((state) => state.auth.resources);
@@ -16,6 +16,9 @@ export const StatesByCategory = () => {
   const [selectedEndDate, setSelectedEndDate] = useState(null);
 
   const refreshData = async (newHood, startDate, endDate) => {
+    if (newHood === ALL_HOODS) {
+      newHood = null;
+    }
     const resp = await resources.stateData(newHood, startDate, endDate);
     setHoods(resp.hoods);
     setResponse(resp);
