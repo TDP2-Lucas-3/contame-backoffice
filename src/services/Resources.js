@@ -68,14 +68,21 @@ export class Resources {
   }
 
   // Data for charts
-  async stateData() {
+  async stateData(hood, from, to) {
     const url = `${BACKEND_URL}data/state`;
-    const response = await this.client.post(url);
+    const response = await this.client.post(url, {
+      hood,
+      from,
+      to,
+    });
     return response.data;
   }
 
-  async mapData() {
-    const url = `${BACKEND_URL}data/map`;
+  async mapData(category) {
+    let url = `${BACKEND_URL}data/map`;
+    if (category) {
+      url = `${url}?category=${category}`;
+    }
     const response = await this.client.get(url);
     return response.data;
   }

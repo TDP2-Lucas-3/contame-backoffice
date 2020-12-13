@@ -9,14 +9,18 @@ import {Router} from 'react-router-dom';
 import {ContameRouter} from './routing/ContameRouter';
 import {createBrowserHistory} from 'history';
 import store from './redux/store';
+import MomentUtils from '@date-io/moment';
+import {MuiPickersUtilsProvider} from '@material-ui/pickers';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <Router history={createBrowserHistory()}>
-        <ContameRouter />
-      </Router>
-    </Provider>
+    <MuiPickersUtilsProvider utils={MomentUtils}>
+      <Provider store={store}>
+        <Router history={createBrowserHistory()}>
+          <ContameRouter />
+        </Router>
+      </Provider>
+    </MuiPickersUtilsProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
