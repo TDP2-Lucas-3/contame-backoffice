@@ -10,16 +10,6 @@ const ALL_CATEGORIES = 'Todas las Categorías';
 export const HeatMap = () => {
   const resources = useSelector((state) => state.auth.resources);
 
-  const incidentsByHood = useGetResource(async () => {
-    const response = await resources.mapData();
-    return response.hoodRanking.map((ranking) => {
-      return {hood: ranking.hood, count: ranking.value};
-    });
-  });
-
-  const [points, setPoints] = useState(null);
-  useGetResource(() => filterByCategory());
-
   const [categories, setCategories] = useState(null);
   useGetResource(async () => {
     const categories = await resources.categories();
@@ -27,8 +17,13 @@ export const HeatMap = () => {
   });
   const [selectedCategory, setCategory] = useState(ALL_CATEGORIES);
 
+  const [points, setPoints] = useState(null);
+  const [incidentsByHood, setIncidentsByHood] = useState(null);
+  useGetResource(() => filterByCategory());
+
   const filterByCategory = async (category) => {
     setPoints(null);
+    setIncidentsByHood(null);
     if (category === ALL_CATEGORIES) {
       category = null;
     }
@@ -37,6 +32,11 @@ export const HeatMap = () => {
     setPoints(
       response.incidents.map((incident) => {
         return {lat: incident.lat, lng: incident.lon};
+      }),
+    );
+    setIncidentsByHood(
+      response.hoodRanking.map((ranking) => {
+        return {hood: ranking.hood, count: ranking.value};
       }),
     );
   };
@@ -53,7 +53,7 @@ export const HeatMap = () => {
         categories={categories}
         onChange={onChange}
       />
-      {points ? (
+      {points && incidentsByHood ? (
         <>
           <HeatMapChart data={points} /> <HeatMapTable data={incidentsByHood} />{' '}
         </>
