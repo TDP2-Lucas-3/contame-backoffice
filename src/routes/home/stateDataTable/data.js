@@ -4,6 +4,12 @@ export const getColumns = (props) => {
   columns.push({
     title: 'Estado',
     field: 'name',
+    cellStyle: {
+      fontSize: '10pt',
+      width: '20',
+      maxWidth: '20',
+      fontWeight: 'bold',
+    },
   });
 
   for (let index in props[0].categories) {

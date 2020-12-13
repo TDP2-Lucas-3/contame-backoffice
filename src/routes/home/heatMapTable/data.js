@@ -2,6 +2,12 @@ export const columns = [
   {
     title: 'Barrio',
     field: 'hood',
+    cellStyle: {
+      fontSize: '10pt',
+      width: '20',
+      maxWidth: '20',
+      fontWeight: 'bold',
+    },
   },
   {
     title: 'Cantidad de Incidencias',
