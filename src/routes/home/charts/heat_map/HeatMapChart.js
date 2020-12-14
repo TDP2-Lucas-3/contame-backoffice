@@ -3,6 +3,9 @@ import React from 'react';
 import {GoogleMap, withGoogleMap, withScriptjs} from 'react-google-maps';
 import HeatmapLayer from 'react-google-maps/lib/components/visualization/HeatmapLayer';
 
+const RATIO = 50;
+const intensity = (amountOfPoints) => amountOfPoints / RATIO;
+
 const InnerHeatMapChart = withScriptjs(
   withGoogleMap((props) => {
     return (
@@ -15,7 +18,7 @@ const InnerHeatMapChart = withScriptjs(
           )}
           options={{
             opacity: 1,
-            maxIntensity: 25,
+            maxIntensity: intensity(props.data.length),
           }}
         />
       </GoogleMap>
